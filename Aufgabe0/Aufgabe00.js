@@ -1,8 +1,8 @@
 var aufgabe00;
 (function (aufgabe00) {
     function main() {
-        var i = prompt("Wat? wer bisch du denn?");
-        var node = document.getElementById("eingabe");
+        let i = prompt("Wat? wer bisch du denn?");
+        let node = document.getElementById("eingabe");
         node.innerHTML += "Tach,";
         node.innerHTML += i;
         console.log("Tach, ", i);
