@@ -4,26 +4,29 @@ var Boxes;
     let c;
     let x = 0;
     let y = 0;
-    for (let i = 0; i < n; i++) {
-        y += (i == 2) ? 20 : 50;
-        x = (x + 170) % 400;
-        switch (i) {
-            case 0:
-                c = "#ff0000";
-                break;
-            case 1:
-            case 4:
-                c = "#00ff00";
-                break;
-            case 3:
-                continue;
-            default:
-                c = "#0000ff";
-        }
-        for (let a = 50; a > 0; a -= 20) {
-            placeDiv(c, x, y, a, a);
-            if (i == 4)
-                break;
+    document.addEventListener("DOMContentLoaded", start);
+    function start() {
+        for (let i = 0; i < n; i++) {
+            y += (i == 2) ? 20 : 50;
+            x = (x + 170) % 400;
+            switch (i) {
+                case 0:
+                    c = "#ff0000";
+                    break;
+                case 1:
+                case 4:
+                    c = "#00ff00";
+                    break;
+                case 3:
+                    continue;
+                default:
+                    c = "#0000ff";
+            }
+            for (let a = 50; a > 0; a -= 20) {
+                placeDiv(c, x, y, a, a);
+                if (i == 4)
+                    break;
+            }
         }
     }
     function placeDiv(_color, _x, _y, _width, _height) {
