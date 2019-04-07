@@ -8,17 +8,20 @@ function randomCards(_numberOfCards: number, _HandkartenArray: string[]) {
     let cardsSelected: string[] = [];
 
 }
-function createCard(): void {
+document.addEventListener("DOMContentLoaded", init)
+function init(): void {
+    let notify: string = prompt("How many cards would you like?");
+    let numberOfCards: number = parseInt(notify);
+    if (Number.isNaN(numberOfCards) || numberOfCards < 0 || numberOfCards > Deck.length) {
+        init();
+    }
+    else {
+        for (let i: number = 0; i < numberOfCards; i++) {
+            addToHand();
+        }
+        displayCard();
+    }
 
-    let i: string = prompt("Wähle aus wie viele Karten du willst(1-31)");
-    let node: HTMLElement = document.getElementById("handkarten");
-    i: number=0;
-    if i<Handkarten[];
-    node.innerHTML += i++;
-    else 
-    node.innerHTML += "false,";
-    
-    console.log("Falsche eingabe,versuchs nochmal ", i);
 }
 
 
