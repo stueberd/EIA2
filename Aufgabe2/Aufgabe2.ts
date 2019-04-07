@@ -8,13 +8,25 @@ function randomCards(_numberOfCards: number, _HandkartenArray: string[]) {
     let cardsSelected: string[] = [];
 
 }
+function createCard(): void {
+
+    let i: string = prompt("Wähle aus wie viele Karten du willst(1-31)");
+    let node: HTMLElement = document.getElementById("handkarten");
+    i: number=0;
+    if i<Handkarten[];
+    node.innerHTML += i++;
+    else 
+    node.innerHTML += "false,";
+    
+    console.log("Falsche eingabe,versuchs nochmal ", i);
+}
 
 
 function init() {
     let Deck: string[] = ["krz7", "krz8", "krz9", "krzb", "krzd", "krzk", "krz1", "krza", "pi7", "pi8", "pi9", "pib", "pid", "pik", "pi1", "pia", "her7", "her8", "her9", "herb", "herd", "herk", "her1", "hera", "kar7", "kar8", "kar9", "karb", "kard", "kark", "kar1", "kara"];
     randomCards(0, Deck);
 }
-let zufallsNr: number = math.Random* Deck.length;
+let zufallsNr: number = math.Random*Deck.length;
 i:number=0;
 if i < Handkarten[];
 
