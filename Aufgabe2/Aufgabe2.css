@@ -1,0 +1,47 @@
+/* Aufgabe 2 - Mau-Mau
+Name: Dimitrios Stüber
+Matrikel: 2257744
+Datum: 07.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
+*{
+    font-family: "Arial", "Helvetica", sans-serif;
+    background-color: #c7c4c4;
+}
+
+
+div{
+    border: black solid 4px;
+    width: 160px;
+    height: 224px;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+div.deck{
+    background-color: #b4b4b4;
+}
+
+/* Rahmen um die Spielkarte */
+section{
+    border: white solid 1px;
+    float: left;
+    margin: 25px;
+    
+}
+
+main > section:nth-child(3){
+    clear: both;
+}
+
+div.rot{
+    background-color: red;
+}
+
+div.schwarz{
+    background-color: black;
+}
