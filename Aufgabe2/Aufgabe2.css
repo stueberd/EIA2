@@ -4,44 +4,40 @@ Matrikel: 2257744
 Datum: 07.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
-*{
-    font-family: "Arial", "Helvetica", sans-serif;
-    background-color: #c7c4c4;
+
+body {
+    background-color:rgb(90, 90, 90);
+    height: 600px;
 }
 
-
-div{
-    border: black solid 4px;
-    width: 160px;
-    height: 224px;
-    margin: 25px;
-    font-weight: bold;
-    font-size: 2.5rem;
-    color: white;
-    text-align: center;
-    display: inline-block;
+#hand {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-div.deck{
-    background-color: #b4b4b4;
+#spielfeld{
+    width: 200px;
+    height: 300px;
+    border: 4px solid white;
+    margin-left: 40%;
+    margin-bottom: 10%;
 }
 
-/* Rahmen um die Spielkarte */
-section{
-    border: white solid 1px;
-    float: left;
-    margin: 25px;
-    
+#stapel {
+    width: 200px;
+    height: 300px;
+    background: rgb(202, 0, 10);
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 10px; 
+    display: block;
+    margin-left: 75%;
+    margin-top: 2%;
 }
-
-main > section:nth-child(3){
-    clear: both;
-}
-
-div.rot{
-    background-color: red;
-}
-
-div.schwarz{
-    background-color: black;
+.cards {
+    width: 200px;
+    height: 300px;
+    background: rgb(111, 100, 131);
+    border: 4px solid white;
+    border-radius: 10px; 
 }

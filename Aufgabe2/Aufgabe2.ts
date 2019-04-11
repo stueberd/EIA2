@@ -4,34 +4,53 @@ Matrikel: 257744
 Datum: 07.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
-function randomCards(_numberOfCards: number, _HandkartenArray: string[]) {
-    let cardsSelected: string[] = [];
 
-}
-document.addEventListener("DOMContentLoaded", init)
-function init(): void {
-    let notify: string = prompt("How many cards would you like?");
-    let numberOfCards: number = parseInt(notify);
-    if (Number.isNaN(numberOfCards) || numberOfCards < 0 || numberOfCards > Deck.length) {
-        init();
+namespace MauMau {
+    interface Cards {
+        
+
+        Nummer: string[];
+        Zeichen: string[];
     }
-    else {
-        for (let i: number = 0; i < numberOfCards; i++) {
-            addToHand();
+    let card: Cards = {
+        Nummer: ["7", "8", "9", "10", "B", "D", "K", "A"],
+        Zeichen: ["Karo", "Herz", "Kreuz", "Pik"]
+    };
+    let hand: Cards[] = [];
+
+    document.addEventListener("DOMContentLoaded", function (): void {
+
+        let eingabe: number = parseInt(prompt("Wie viele Karten willst du auf der Hand haben?", "4-8"));
+        if (eingabe > 8)   
+            eingabe = 8;
+
+        if (eingabe < 4)
+            eingabe = 4;
+        // Karten verteilen
+        giveCard(eingabe);
+
+        // Karten anzeigen
+        anzeigen();
+
+    });
+
+    function giveCard(_eingabe: number): void {
+        for (let i: number = 0; i < _eingabe; i++) {
+            let index: number = Math.floor(Math.random() * card.length);
+            let card: Cards = card[index];
+            hand.push(card);
+            card.splice(index, 1);
         }
-        displayCard();
+        console.table(hand);
     }
 
-}
-
-
-function init() {
-    let Deck: string[] = ["krz7", "krz8", "krz9", "krzb", "krzd", "krzk", "krz1", "krza", "pi7", "pi8", "pi9", "pib", "pid", "pik", "pi1", "pia", "her7", "her8", "her9", "herb", "herd", "herk", "her1", "hera", "kar7", "kar8", "kar9", "karb", "kard", "kark", "kar1", "kara"];
-    randomCards(0, Deck);
-}
-let zufallsNr: number = math.Random*Deck.length;
-i:number=0;
-if i < Handkarten[];
-
-
-document.addEventListener('DOMContentLoaded', init);
+    function anzeigen(): void {
+        for (let i: number = 0; i < hand.length; i++) {
+            // Karte erstellen
+            let card: HTMLElement = document.createElement("div");
+            card.innerText = hand[i].Zeichen + " " + hand[i].Nummer;
+            card.setAttribute("class", "cards");
+            // Karte dem DOM Tree hinzufügen
+            document.getElementById("hand").appendChild(card);
+        }
+    }
