@@ -1,3 +1,6 @@
+body {
+    background-color: darkgreen
+}
 body>div {
     border: solid black;
     font-size: 20px;
@@ -14,7 +17,7 @@ main {
     justify-content: center;
     position: absolute;
     top: 300px;
-    background-color: darkgreen
+    
 }
 
 main>div {
