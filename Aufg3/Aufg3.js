@@ -9,20 +9,20 @@ var MauMau;
     ];
     let handCards = [];
     let pileCards = [];
+    //Prompt
+    let numberCards;
+    let input = prompt("Mit wie vielen Karten willst du spielen? 4-8");
+    numberCards = Number(input);
     //Main
     function maumau() {
         document.getElementById("button").addEventListener("click", sortCards);
-        document.getElementById("Nachzieh").addEventListener("click", addCard);
+        document.getElementById("Stapel").addEventListener("click", addCard);
         document.addEventListener("keydown", addCardSpace);
         document.getElementById("Inhalt").addEventListener("click", removeCard);
-        //Prompt
-        let numberCards;
-        let input = prompt("Mit wie vielen Karten willst du spielen? 4-8");
-        numberCards = Number(input);
         //Karten ausgeben
         for (let i = 0; i < numberCards; i++) {
             let randomNumber = createRandomNumber(allCards.length);
-            placeDiv(allCards[randomNumber].zeichen, allCards[randomNumber].zahl, i);
+            placeDiv({ _zeichen: allCards[randomNumber].zeichen, _zahl: allCards[randomNumber].zahl, _y: i });
             let card = allCards.splice(randomNumber, 1)[0];
             handCards.push(card);
             continue;
@@ -50,9 +50,9 @@ var MauMau;
             pileCards.push(karte);
             deleteCards();
             for (let i = 0; i < handCards.length; i++) {
-                placeDiv(handCards[i].zeichen, handCards[i].zahl, i);
+                placeDiv({ _zeichen: handCards[i].zeichen, _zahl: handCards[i].zahl, _y: i });
             }
-            placePile(pileCards[pileCards.length - 1].zeichen, pileCards[pileCards.length - 1].zahl, pileCards.length - 1);
+            placePile({ _zeichen: pileCards[pileCards.length - 1].zeichen, _zahl: pileCards[pileCards.length - 1].zahl, _y: pileCards.length - 1 });
             console.log(pileCards);
         }
     }
@@ -60,7 +60,7 @@ var MauMau;
         let node = document.getElementById("Ablage");
         node.innerHTML = "Ablage";
     }
-    function placePile(_zeichen, _zahl, _y) {
+    function placePile({ _zeichen, _zahl, _y }) {
         let div = document.createElement("div");
         deletePile();
         document.getElementById("Ablage").appendChild(div);
@@ -73,11 +73,13 @@ var MauMau;
         handCards.sort(compareCards);
         deleteCards();
         for (let i = 0; i < handCards.length; i++) {
-            placeDiv(handCards[i].zeichen, handCards[i].zahl, i);
+            placeDiv({ _zeichen: handCards[i].zeichen, _zahl: handCards[i].zahl, _y: i });
         }
     }
     function compareCards(card1, card2) {
+        // tslint:disable-next-line:typedef
         let textA = card1.zeichen.toUpperCase();
+        // tslint:disable-next-line:typedef
         let textB = card2.zeichen.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
@@ -91,7 +93,7 @@ var MauMau;
         }
         for (let i = 0; i < handCards.length; i++) {
             console.log(handCards);
-            placeDiv(handCards[i].zeichen, handCards[i].zahl, i);
+            placeDiv({ _zeichen: handCards[i].zeichen, _zahl: handCards[i].zahl, _y: i });
         }
     }
     //Leertaste
@@ -107,7 +109,7 @@ var MauMau;
         node.innerHTML = "";
     }
     //Divs
-    function placeDiv(_zeichen, _zahl, _y) {
+    function placeDiv({ _zeichen, _zahl, _y }) {
         let div = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
         div.setAttribute("class", _zeichen);
