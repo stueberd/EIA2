@@ -11,10 +11,12 @@ namespace MauMau {
         { zahl: "7", zeichen: "Pik" }, { zahl: "8", zeichen: "Pik" }, { zahl: "9", zeichen: "Pik" }, { zahl: "10", zeichen: "Pik" }, { zahl: "Bube", zeichen: "Pik" }, { zahl: "Dame", zeichen: "Pik" }, { zahl: "Koenig", zeichen: "Pik" }, { zahl: "As", zeichen: "Pik" },
         { zahl: "7", zeichen: "Kreuz" }, { zahl: "8", zeichen: "Kreuz" }, { zahl: "9", zeichen: "Kreuz" }, { zahl: "10", zeichen: "Kreuz" }, { zahl: "Bube", zeichen: "Kreuz" }, { zahl: "Dame", zeichen: "Kreuz" }, { zahl: "Koenig", zeichen: "Kreuz" }, { zahl: "As", zeichen: "Kreuz" },
         { zahl: "7", zeichen: "Herz" }, { zahl: "8", zeichen: "Herz" }, { zahl: "9", zeichen: "Herz" }, { zahl: "10", zeichen: "Herz" }, { zahl: "Bube", zeichen: "Herz" }, { zahl: "Dame", zeichen: "Herz" }, { zahl: "Koenig", zeichen: "Herz" }, { zahl: "As", zeichen: "Herz" }
-    ];
+    ]; 
+    let handCards: Card[] = [];
+
     let pileCards: Card[] = [];
 
-    //Hauptfunktion
+    //Main
     function maumau(): void {
         document.getElementById("button").addEventListener("click", sortCards);
         document.getElementById("Nachzieh").addEventListener("click", addCard);
@@ -23,13 +25,13 @@ namespace MauMau {
 
         //Prompt
         let numberCards: number;
-        let input: string = prompt("Mit wie vielen Karten willst du spielen? 4-10");
+        let input: string = prompt("Mit wie vielen Karten willst du spielen? 4-8");
         numberCards = Number(input);
 
         //Karten ausgeben
         for (let i: number = 0; i < numberCards; i++) {
             let randomNumber: number = createRandomNumber(allCards.length);
-            placeDiv(allCards[randomNumber].color, allCards[randomNumber].value, i);
+            placeDiv(allCards[randomNumber].zeichen, allCards[randomNumber].zahl, i);
             let card: Card = allCards.splice(randomNumber, 1)[0];
             handCards.push(card)
             continue;
@@ -37,7 +39,7 @@ namespace MauMau {
     }
 
     function createRandomNumber(x: number): number {
-        return Math.floor(Math.random() * Math.floor(x))
+        return Math.floor(Math.random() * Math.floor(x));
     }
 
 
@@ -47,32 +49,38 @@ namespace MauMau {
         if (domCard != main) {
             let index: number;
             let domAttribute: string = domCard.getAttribute("id");
-            domAttribute = domAttribute.substr(4);
+            
+            if(domAttribute.substr(domAttribute.length-2).charAt(0) == "1" 
+            || domAttribute.substr(domAttribute.length-2).charAt(0) == "2" 
+            || domAttribute.substr(domAttribute.length-2).charAt(0) == "3") {
+                domAttribute = domAttribute.substr(domAttribute.length-2);
+            } else {
+                domAttribute = domAttribute.substr(domAttribute.length-1);
+            }
             index = parseInt(domAttribute);
             let karte: Card = handCards.splice(index, 1)[0];
             pileCards.push(karte);
             deleteCards();
-            deletePile();
             for (let i: number = 0; i < handCards.length; i++) {
-                placeDiv(handCards[i].color, handCards[i].value, i)
+                placeDiv(handCards[i].zeichen, handCards[i].zahl, i);
             }
-            for (let i: number = 0; i < pileCards.length; i++) {
-                placePile(pileCards[i].color, pileCards[i].value, i)
-            }
+            placePile(pileCards[pileCards.length-1].zeichen, pileCards[pileCards.length-1].zahl, pileCards.length-1);
+            console.log(pileCards);
         }
     }
 
     function deletePile(): void {
-        let node: HTMLElement = document.getElementById("Ablagestapel");
-        node.innerHTML = "Ablagestapel";
+        let node: HTMLElement = document.getElementById("Ablage");
+        node.innerHTML = "Ablage";
     }
 
-    function placePile(_color: string, _value: string, _y: number): void {
+    function placePile(_zeichen: string, _zahl: string, _y: number) : void {
         let div: HTMLDivElement = document.createElement("div");
-        document.getElementById("Ablagestapel").appendChild(div);
-        div.setAttribute("class", _color + ", pile");
-        div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color + _value;
+        deletePile();
+        document.getElementById("Ablage").appendChild(div);
+        div.setAttribute("class", _zeichen + " " + ", pile");
+        div.setAttribute("id", "card" + _zeichen + _zahl + _y);
+        document.getElementById("card" + _zeichen + _zahl + _y).innerHTML += _zeichen + " " +_zahl;
     }
 
     //Sortieren
@@ -80,17 +88,17 @@ namespace MauMau {
         handCards.sort(compareCards);
         deleteCards();
         for (let i: number = 0; i < handCards.length; i++) {
-            placeDiv(handCards[i].color, handCards[i].value, i)
+            placeDiv(handCards[i].zeichen, handCards[i].zahl, i)
         }
     }
 
     function compareCards(card1: Card, card2: Card) {
-        let textA = card1.color.toUpperCase();
-        let textB = card2.color.toUpperCase();
+        let textA = card1.zeichen.toUpperCase();
+        let textB = card2.zeichen.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
 
-    //add Card
+    //Karte hinzufügen
     function addCard(): void {
         deleteCards();
         for (let i: number = 0; i < 1; i++) {
@@ -100,11 +108,11 @@ namespace MauMau {
         }
         for (let i: number = 0; i < handCards.length; i++) {
             console.log(handCards);
-            placeDiv(handCards[i].color, handCards[i].value, i);
+            placeDiv(handCards[i].zeichen, handCards[i].zahl, i);
         }
     }
 
-    //Leertaste addet Karte
+    //Leertaste
     function addCardSpace(_event: KeyboardEvent): void {
         let keyCode: number = _event.keyCode;
         if (keyCode == 32) {
@@ -118,12 +126,12 @@ namespace MauMau {
         node.innerHTML = "";
     }
 
-    //Divs erstellen
-    function placeDiv(_color: string, _value: string, _y: number): void {
+    //Divs
+    function placeDiv(_zeichen: string, _zahl: string, _y: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
-        div.setAttribute("class", _color);
+        div.setAttribute("class", _zeichen);
         div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color + _value;
+        document.getElementById("card" + _y).innerHTML += _zeichen + _zahl;
     }
 }
