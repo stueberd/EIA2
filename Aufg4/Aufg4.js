@@ -34,7 +34,7 @@ function orderContent(_event) {
                 document.getElementById("containerSelections").appendChild(target);
             }
         }
-        if (orderSelections[i].name == "Schokolade" || orderSelections[i].name == "Vanille" || orderSelections[i].name == "Erdbeere" || orderSelections[i].name == "Zitrone" || orderSelections[i].name == "Joghurt" || orderSelections[i].name == "Haselnuss") {
+        if (orderSelections[i].name == "Schokolade" || orderSelections[i].name == "Vanille" || orderSelections[i].name == "Erdbeere" || orderSelections[i].name == "Zitrone" || orderSelections[i].name == "Joghurt" || orderSelections[i].name == "Haselnuss" || orderSelections[i].name == "Oreo" || orderSelections[i].name == "HSchlumpf" || orderSelections[i].name == "Mystery" || orderSelections[i].name == "Apfel") {
             console.log(orderSum);
             let target = document.createElement("li");
             target.innerHTML = `${orderSelections[i].value}, `;

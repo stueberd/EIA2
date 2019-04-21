@@ -9,6 +9,24 @@ main {
     padding: 10px 10px;
   }
 
+
+h1 {
+    position: relative;
+    margin-right: 200px;
+    text-align: center;
+    text-transform: uppercase;
+   
+}
+
+
+input[required]:after {
+    content:" * ";
+  }
+
+legend {
+    margin: 0 auto;
+    
+}
 .sidebar {
     height: 100%; 
     width: 200px; 
@@ -36,22 +54,6 @@ main {
     border: rgb(243, 121, 8) 1px solid;
 }
 
-h1 {
-    position: relative;
-    margin-right: 200px;
-    text-align: center;
-    text-transform: uppercase;
-   
-}
-
-
-input[required]:after {
-    content:" * ";
-  }
-
-legend {
-    margin: 0 auto;
-}
 
 .formName input {
     margin-right: 40px; 

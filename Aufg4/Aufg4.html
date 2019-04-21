@@ -3,92 +3,15 @@ Matrikel: 257744
 Datum: 18.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 
-
-<html>
-<head>
-    <script src="Aufg4.js"></script>
-    <link rel="stylesheet" type="text/css" href="Aufg4.css">
-    <title>Mau-Mau</title>
-</head>
-<body>
-    <header>
-        <h1>Ice Ice Baby</h1>
-    </header>
-    <main>
-            <input type="range" name="Wie viele Kugeln möchtest du?" min="0" max="5" step="1.0" value="0"/>
-            <hr/>
-            <input type="text" name="Datalist" list="options" placeholder="Welche Sorte/Sorten?"/>
-            <datalist id="options">
-                <option value="Schoko"> </option>
-                <option value="Vanille"> </option>
-                <option value="Erbeer"> </option>
-                <option value="Yogurt"> </option>
-                <option value="Banane"> </option>
-                <option value="Straziatell"> </option>
-                <option value="Mango"> </option>
-                <option value="Oreo"> </option>
-                <option value="Apfel"> </option>
-                <option value="Schlumpf"> </option>
-                <option value="Waldmeister"> </option>
-                <option value="Pistazie"> </option>
-            
-            </datalist>
-           
-            <input type="text" name="Datalist" list="options" placeholder="Weitere Sorten"/>
-            <datalist id="options">
-                <option value="Schoko"> </option>
-                <option value="Vanille"> </option>
-                <option value="Erbeer"> </option>
-                <option value="Yogurt"> </option>
-                <option value="Banane"> </option>
-                <option value="Straziatell"> </option>
-                <option value="Mango"> </option>
-                <option value="Oreo"> </option>
-                <option value="Apfel"> </option>
-                <option value="Schlumpf"> </option>
-                <option value="Waldmeister"> </option>
-                <option value="Pistazie"> </option>
-            
-            </datalist> 
-            <hr/>
-            
-            <fieldset id="checkbox">
-                    <legend> Extras </legend>
-                    <input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
-                    <label for="check1">Sahne</label>
-                    <input type="checkbox" name="Checkbox2" value="check2" id="check2"/>
-                    <label for="check2">Schokosoße</label>
-                    <input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
-                    <label for="check3">Erbeersoße</label>
-                    <input type="checkbox" name="Checkbox4" value="check4" id="check4"/>
-                    <label for="check4">Schokostreusel</label>
-                    <input type="checkbox" name="Checkbox5" value="check5" id="check5"/>
-                    <label for="check5">BunteStreusel</label>
-                    <input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
-                    <label for="check3">Schokowaffel</label>
-                </fieldset>
-                <fieldset id="radio">
-                    <legend> Radiobutton Group </legend>
-                    <input type="radio" name="Radiogroup" value="radio1" id="radio1" />
-                    <label for="radio1">Waffel</label>
-                    <input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
-                    <label for="radio2">Becher</label>
-                   
-                </fieldset>
-    </main>
-</body>
-
-</html>
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>Eis-Dealer</title>
+    <title>Ice Ice Baby</title>
     <link rel="stylesheet" type="text/css" href="Aufg4.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <script src="Aufg4.js"></script>
 </head>
 
 <body>
@@ -103,7 +26,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
             <legend>Sorten</legend>
             
             <div class="iceSelect">
-                <select name="iceSelect" id="variety">
+                <select name="iceSelect" id="sorten">
                     <option value="[Eissorte]" selected="">Wähle eine Sorte</option>
                     <option value="Schokolade">Schokolade</option>
                     <option value="Vanille">Vanille</option>
@@ -115,12 +38,11 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                     <option value="Schlumpf">Schlumpfeis</option>
                     <option value="Mystery">Mystery</option>
                     <option value="Apfel">Grüner Apfel</option>
-                    <option value="Oreo">Oreo</option>
                 </select>
                 <input type="number" name="count1" step="1" min="0" max="6" value="1"> Kugeln
             </div>
             <div class="iceSelect">
-                <select name="iceSelect" id="variety">
+                <select name="iceSelect" id="sorten">
                     <option value="[Eissorte]" selected="">Wähle eine Sorte</option>
                     <option value="Schokolade">Schokolade</option>
                     <option value="Vanille">Vanille</option>
@@ -128,6 +50,10 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                     <option value="Zitrone">Zitrone</option>
                     <option value="Joghurt">Joghurt</option>
                     <option value="Haselnuss">Haselnuss</option>
+                    <option value="Oreo">Oreo</option>
+                    <option value="Schlumpf">Schlumpfeis</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Apfel">Grüner Apfel</option>  
                 </select>
                 <input type="number" name="count2" step="1" min="0" max="6" value="1"> Kugeln
             </div>
@@ -148,10 +74,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                 <input type="checkbox" name="toppingSelect2" id="crumbleTopping" alt="Streusel-Topping" value="0.8">
                 <label for="crumbleTopping">Streusel</label>
             </div>
-            <div class="toppingSelect">
-                <input type="checkbox" name="toppingSelect3" id="creamTopping" alt="Sahne-Topping" value="0.6">
-                <label for="creamTopping">Sahne</label>
-            </div>
+           
             
             
         </fieldset>
@@ -206,12 +129,11 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
             </fieldset>
         </form>
         <div class="sidebar">
-            <h3>Zusammenfassung Deiner Bestellung :</h3>
+            <h3>deine Bestellung :</h3>
             <div id="orderSummary">
                 <span id="iceSelections"> </span>
                 <span id="toppingSelections"> </span>
                 <span id="containerSelections"> </span>
-                <span id="shippingSelections"> </span>
                 <span id="orderPrice"> </span>
 
             </div>
@@ -220,6 +142,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         </div>
     </main>
 </body>
-<script src="Aufg4.js" defer></script>
+
 
 </html>
