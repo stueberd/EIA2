@@ -1,0 +1,126 @@
+body {
+    background-color: #45c9e0;
+    color: rgb(252, 251, 250) ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+main {
+    margin-right: 200px; 
+    padding: 10px 10px;
+  }
+
+.sidebar {
+    height: 100%; 
+    width: 200px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    right: 0;
+    background-color: rgb(44, 44, 44); 
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(250, 250, 250);
+    display: block;
+  }
+
+.sidebar h3 {
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+    border: rgb(243, 121, 8) 1px solid;
+}
+
+h1 {
+    position: relative;
+    margin-right: 200px;
+    text-align: center;
+    text-transform: uppercase;
+   
+}
+
+
+input[required]:after {
+    content:" * ";
+  }
+
+legend {
+    margin: 0 auto;
+}
+
+.formName input {
+    margin-right: 40px; 
+}
+
+.formName label, .formAdress label {
+margin-right: 5px;
+}
+
+.formAdress input, .formAdress label {
+    margin-top: 5px;
+    display: block;
+}
+
+.iceSelect input {
+    margin-left: 15px;
+}
+
+header {
+    border-bottom: rgb(255, 115, 1) 5px solid;
+    
+}
+
+fieldset {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(117, 116, 116, 0.8);
+    min-height: 120px;
+    border-color: rgb(250, 138, 1) 3px solid;
+
+}
+
+.iceSelect, .containerSelect, .toppingSelect, .paymentSelect {
+    padding-top: 10px ;
+    margin: 0 auto;
+}
+
+.paymentSelect {
+    display: inline;
+    margin-right: 40px;
+}
+
+.formAdress {
+    margin-top: 20px;
+}
+
+.formPayment {
+    margin-top: 45px;
+}
+
+.buttonAside {
+    width: 200px;
+    padding: 15px 0;
+    border: rgb(235, 234, 233) 1px solid;
+    box-shadow: 0 4px 8px rgba(117, 116, 116, 0.8);
+    font-weight: 800;
+    color: white;
+    background: none;
+    position: fixed;
+    bottom: 0;
+}
+.buttonAside:hover {
+ cursor: grab;
+}
+
+#orderSummary span {
+    display: block;
+}
+
+ul {
+    color: white;
+    text-decoration: underline;
+}

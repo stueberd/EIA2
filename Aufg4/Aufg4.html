@@ -1,0 +1,225 @@
+<!--Name: Dimitrios Stüber
+Matrikel: 257744
+Datum: 18.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+
+
+<html>
+<head>
+    <script src="Aufg4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Aufg4.css">
+    <title>Mau-Mau</title>
+</head>
+<body>
+    <header>
+        <h1>Ice Ice Baby</h1>
+    </header>
+    <main>
+            <input type="range" name="Wie viele Kugeln möchtest du?" min="0" max="5" step="1.0" value="0"/>
+            <hr/>
+            <input type="text" name="Datalist" list="options" placeholder="Welche Sorte/Sorten?"/>
+            <datalist id="options">
+                <option value="Schoko"> </option>
+                <option value="Vanille"> </option>
+                <option value="Erbeer"> </option>
+                <option value="Yogurt"> </option>
+                <option value="Banane"> </option>
+                <option value="Straziatell"> </option>
+                <option value="Mango"> </option>
+                <option value="Oreo"> </option>
+                <option value="Apfel"> </option>
+                <option value="Schlumpf"> </option>
+                <option value="Waldmeister"> </option>
+                <option value="Pistazie"> </option>
+            
+            </datalist>
+           
+            <input type="text" name="Datalist" list="options" placeholder="Weitere Sorten"/>
+            <datalist id="options">
+                <option value="Schoko"> </option>
+                <option value="Vanille"> </option>
+                <option value="Erbeer"> </option>
+                <option value="Yogurt"> </option>
+                <option value="Banane"> </option>
+                <option value="Straziatell"> </option>
+                <option value="Mango"> </option>
+                <option value="Oreo"> </option>
+                <option value="Apfel"> </option>
+                <option value="Schlumpf"> </option>
+                <option value="Waldmeister"> </option>
+                <option value="Pistazie"> </option>
+            
+            </datalist> 
+            <hr/>
+            
+            <fieldset id="checkbox">
+                    <legend> Extras </legend>
+                    <input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
+                    <label for="check1">Sahne</label>
+                    <input type="checkbox" name="Checkbox2" value="check2" id="check2"/>
+                    <label for="check2">Schokosoße</label>
+                    <input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
+                    <label for="check3">Erbeersoße</label>
+                    <input type="checkbox" name="Checkbox4" value="check4" id="check4"/>
+                    <label for="check4">Schokostreusel</label>
+                    <input type="checkbox" name="Checkbox5" value="check5" id="check5"/>
+                    <label for="check5">BunteStreusel</label>
+                    <input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
+                    <label for="check3">Schokowaffel</label>
+                </fieldset>
+                <fieldset id="radio">
+                    <legend> Radiobutton Group </legend>
+                    <input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+                    <label for="radio1">Waffel</label>
+                    <input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+                    <label for="radio2">Becher</label>
+                   
+                </fieldset>
+    </main>
+</body>
+
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Eis-Dealer</title>
+    <link rel="stylesheet" type="text/css" href="Aufg4.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1> Ice Ice Baby</h1>
+    </header>
+    <main>
+
+        <fieldset id="iceSelect">
+
+            <legend>Sorten</legend>
+            
+            <div class="iceSelect">
+                <select name="iceSelect" id="variety">
+                    <option value="[Eissorte]" selected="">Wähle eine Sorte</option>
+                    <option value="Schokolade">Schokolade</option>
+                    <option value="Vanille">Vanille</option>
+                    <option value="Erdbeere">Erdbeere</option>
+                    <option value="Zitrone">Zitrone</option>
+                    <option value="Joghurt">Joghurt</option>
+                    <option value="Haselnuss">Haselnuss</option>
+                    <option value="Oreo">Oreo</option>
+                    <option value="Schlumpf">Schlumpfeis</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Apfel">Grüner Apfel</option>
+                    <option value="Oreo">Oreo</option>
+                </select>
+                <input type="number" name="count1" step="1" min="0" max="6" value="1"> Kugeln
+            </div>
+            <div class="iceSelect">
+                <select name="iceSelect" id="variety">
+                    <option value="[Eissorte]" selected="">Wähle eine Sorte</option>
+                    <option value="Schokolade">Schokolade</option>
+                    <option value="Vanille">Vanille</option>
+                    <option value="Erdbeere">Erdbeere</option>
+                    <option value="Zitrone">Zitrone</option>
+                    <option value="Joghurt">Joghurt</option>
+                    <option value="Haselnuss">Haselnuss</option>
+                </select>
+                <input type="number" name="count2" step="1" min="0" max="6" value="1"> Kugeln
+            </div>
+        </fieldset>
+        <fieldset id="toppingSelect">
+            <legend>Wähle deine Extras</legend>
+
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect3" id="creamTopping" alt="Sahne-Topping" value="0.6">
+                <label for="creamTopping">Sahne</label>
+            </div>
+            
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect1" id="chocolateTopping" alt="Schokoladen-Topping" value="0.8">
+                <label for="chocolateTopping">Schokosoße</label>
+            </div>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect2" id="crumbleTopping" alt="Streusel-Topping" value="0.8">
+                <label for="crumbleTopping">Streusel</label>
+            </div>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect3" id="creamTopping" alt="Sahne-Topping" value="0.6">
+                <label for="creamTopping">Sahne</label>
+            </div>
+            
+            
+        </fieldset>
+        <fieldset id="containerSelect">
+            <legend>Wähle Dein Behälter</legend>
+            <h2> Behälter </h2>
+            <div class="containerSelect">
+                <input type="radio" name="container" id="waffle" alt="Waffel" value="0">
+                <label for="waffle">Waffel</label>
+            </div>
+            <div class="containerSelect">
+                <input type="radio" name="container" id="cup" alt="Becher" value="0">
+                <label for="cup">Becher</label>
+            </div>
+        </fieldset>
+        
+        <form>
+            <fieldset id="formSelect">
+                <legend>Gib Deine Daten an</legend>
+                <h2> Adresse </h2>
+                <div class="formData">
+                    <div class="formName">
+                        <label for="forename">Vorname</label>
+                        <input type="text" id="forename" name="forename">
+                        <label for="surname">Nachname</label>
+                        <input type="text" id="surname" name="surname">
+                    </div>
+                    <div class="formAdress">
+                        <label for="location">Ort</label>
+                        <input type="text" id="location" name="location" placeholder="Ort" required="required">
+                        <label for="street">Straße</label>
+                        <input type="text" id="street" name="street" placeholder="Straße" required="required">
+                        <label for="numberHouse">Hausnummer</label>
+                        <input type="number" id="numberHouse" name="count2" step="1" min="0" max="100" value="0" required="required">
+                    </div>
+                </div>
+                <h2> Zahlungsart </h2>
+                <div class="formPayment">
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="cashPayment" value="cashPayment">
+                        <label for="cashPayment">Bar</label>
+                    </div>
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="cardPayment" value="cardPayment">
+                        <label for="cardPayment">Karte</label>
+                    </div>
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="paypalPayment" value="paypalPayment">
+                        <label for="paypalPayment">PayPal</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="sidebar">
+            <h3>Zusammenfassung Deiner Bestellung :</h3>
+            <div id="orderSummary">
+                <span id="iceSelections"> </span>
+                <span id="toppingSelections"> </span>
+                <span id="containerSelections"> </span>
+                <span id="shippingSelections"> </span>
+                <span id="orderPrice"> </span>
+
+            </div>
+            <button class="buttonAside" id="orderDone"> Bestellen </button>
+
+        </div>
+    </main>
+</body>
+<script src="Aufg4.js" defer></script>
+
+</html>
