@@ -29,6 +29,7 @@ var EisDealer;
             { bezeichnung: "Streusel", preis: 0.30, type: "checkbox", kathegorie: "Topping", min: 0, max: 0, step: 0 },
             { bezeichnung: "Schockosoße", preis: 0.40, type: "checkbox", kathegorie: "Topping", min: 0, max: 0, step: 0 },
             { bezeichnung: "Erdbeersoße", preis: 0.40, type: "checkbox", kathegorie: "Topping", min: 0, max: 0, step: 0 },
+            { bezeichnung: "Schokowaffel", preis: 0.50, type: "checkbox", kathegorie: "Topping", min: 0, max: 0, step: 0 }
         ],
         "Lieferoption": [
             { bezeichnung: "Abholer", preis: 0.00, type: "radio", kathegorie: "Lieferoption", min: 0, max: 0, step: 0 },
