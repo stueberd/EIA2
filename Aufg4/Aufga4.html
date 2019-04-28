@@ -1,0 +1,149 @@
+    <!--      
+        Aufgabe: (Aufgabe 4  Eisdealer) 
+        Name: Dimitrios Stüber
+        Matrikel: 257744
+        Datum: (27.04.2019) 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Eis-Dealer</title>
+    <link rel="stylesheet" type="text/css" href="Aufg4.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <script src="Aufga4.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1> Ice Ice Baby</h1>
+        <img src="icecream-vector.png">
+    </header>
+    <main> 
+        <!--Auswahl Dokumentbereich-->
+        <fieldset id="iceSelect">
+
+            <legend>Unsere Sorten</legend>
+            
+            <div class="iceSelect">
+                <span><input type="number" name="Schokolade" step="1" min="0" max="6" value="0">
+                    Schoko</span>
+                <span><input type="number" name="Vanille" step="1" min="0" max="6" value="0">
+                    Vanille</span>
+                <span><input type="number" name="Zitrone" step="1" min="0" max="6" value="0">
+                    Zitrone</span>
+                <span><input type="number" name="Joghurt" step="1" min="0" max="6" value="0">
+                    Joghurt</span>
+                <span><input type="number" name="Oreo" step="1" min="0" max="6" value="0">
+                    Oreo</span>
+                <span><input type="number" name="Schlumpf" step="1" min="0" max="6" value="0">
+                        Schlumpfeis</span>
+                <span><input type="number" name="Mystery" step="1" min="0" max="6" value="0">
+                            Mystery</span>
+            
+
+            </div>
+        </fieldset>
+        <fieldset id="toppingSelect">
+            <legend>Extras?</legend>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect1" id="creamTopping" alt="Sahne-Topping" value="0.8">
+                <label for="creamTopping">Sahne</label>
+            </div>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect2" id="chocolateTopping" alt="Schokoladen-Topping" value="0.8">
+                <label for="chocolateTopping">Schokoladensoße</label>
+            </div>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect3" id="strawberryTopping" alt="Erdbeer-Topping" value="0.8">
+                <label for="chocolateTopping">Erdbeersoße</label>
+            </div>
+            <div class="toppingSelect">
+                <input type="checkbox" name="toppingSelect4" id="crumbleTopping" alt="Streusel-Topping" value="0.8">
+                <label for="crumbleTopping">Streusel</label>
+            </div>
+           
+        </fieldset>
+        <fieldset id="containerSelect">
+            <legend>Behäter</legend>
+            
+            <div class="containerSelect">
+                <input type="radio" name="container" id="waffle" alt="Waffel" value="0">
+                <label for="waffle">Waffel</label>
+            </div>
+            <div class="containerSelect">
+                <input type="radio" name="container" id="cup" alt="Becher" value="0">
+                <label for="cup">Becher</label>
+            </div>
+        </fieldset>
+        <fieldset id="shippingSelect">
+            <legend>Versandoptionen</legend>
+            
+            <div class="shippingSelect">
+                <input type="radio" name="shipping" id="normalShipping" alt="Normal-Versand" value="0"
+                    EDprice="2">
+                <label for="normalShipping">Albholung</label>
+            </div>
+            <div class="shippingSelect">
+                <input type="radio" name="shipping" id="expressShipping" alt="Express-Versand" value="0"
+                    EDprice="5">
+                <label for="expressShipping">Lieferung</label>
+            </div>
+        </fieldset>
+        <form> 
+            <fieldset id="formSelect">
+                <legend>Deine Daten</legend>
+                
+                <div class="formData">
+                    <div class="formName">
+                        <label for="forename">Vorname</label>
+                        <input type="text" id="forename" name="forename">
+                        <label for="surname">Nachname</label>
+                        <input type="text" id="surname" name="surname">
+                    </div>
+                    <div class="formAdress">
+                        <label for="location">Ort</label>
+                        <input type="text" id="location" name="location" placeholder="Ort" required="1">
+                        <label for="street">Straße</label>
+                        <input type="text" id="street" name="street" placeholder="Straße" required="1">
+                        <label for="numberHouse">Hausnummer</label>
+                        <input type="number" id="numberHouse" name="count2" step="1" min="0" max="999" value="0"
+                            required="required">
+                    </div>
+                </div>
+                <legend>Zahlungsart</legend>l
+                <div class="formPayment">
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="cashPayment" value="0" required>
+                        <label for="cashPayment">Bar</label>
+                    </div>
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="cardPayment" value="0" required>
+                        <label for="cardPayment">Karte</label>
+                    </div>
+                    <div class="paymentSelect">
+                        <input type="radio" name="payment" id="paypalPayment" value="0" required>
+                        <label for="paypalPayment">PayPal</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="sidebar"> 
+            <h3> Deine Bestellung:</h3>
+            <div id="orderSummary">
+                <span id="iceSelections"> </span>
+                <span id="toppingSelections"> </span>
+                <span id="containerSelections"> </span>
+                <span id="shippingSelections"> </span>
+                <span id="orderPrice"> </span>
+
+            </div>
+            <button class="buttonAside" id="orderDone"> Bestellung überprüfen </button> 
+
+        </div>
+    </main>
+</body>
+
+
+</html>

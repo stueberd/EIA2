@@ -57,6 +57,22 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                 </select>
                 <input type="number" name="count2" step="1" min="0" max="6" value="1"> Kugeln
             </div>
+            <div class="iceSelect">
+                <select name="iceSelect" id="sorten">
+                    <option value="[Eissorte]" selected="">Wähle eine Sorte</option>
+                    <option value="Schokolade">Schokolade</option>
+                    <option value="Vanille">Vanille</option>
+                    <option value="Erdbeere">Erdbeere</option>
+                    <option value="Zitrone">Zitrone</option>
+                    <option value="Joghurt">Joghurt</option>
+                    <option value="Haselnuss">Haselnuss</option>
+                    <option value="Oreo">Oreo</option>
+                    <option value="Schlumpf">Schlumpfeis</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Apfel">Grüner Apfel</option>  
+                </select>
+                <input type="number" name="count2" step="1" min="0" max="6" value="1"> Kugeln
+            </div>   
         </fieldset>
         <fieldset id="toppingSelect">
             <legend>Wähle deine Extras</legend>
@@ -104,7 +120,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                     </div>
                     <div class="formAdress">
                         <label for="location">Ort</label>
-                        <input type="text" id="location" name="location" placeholder="Ort" required="required">
+                        <input type="text" id="location" name="location" placeholder="Ort" required="1">
                         <label for="street">Straße</label>
                         <input type="text" id="street" name="street" placeholder="Straße" required="required">
                         <label for="numberHouse">Hausnummer</label>

@@ -17,6 +17,9 @@ h1 {
     text-transform: uppercase;
    
 }
+header img { max-width: 600px; max-height: 200px;
+    position: center;
+}
 
 
 input[required]:after {
