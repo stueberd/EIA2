@@ -1,0 +1,16 @@
+{
+	"name": "miniserver",
+	"version": "1.0.0",
+	"description": "Minimal server just bouncing the URL",
+	"author": "Jirka, adapted by Lukas adapted by Dimi",
+	"main": "Server.js",
+	"scripts": {
+		"start": "node EIA2/Aufg6/Server/server.js"
+	},
+	"engines": {
+		"node": "8.11.3"
+	},
+	"dependencies": {
+		"@types/node": "^11.13.8"
+	}
+}
