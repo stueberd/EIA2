@@ -24,7 +24,7 @@ var EisDealer;
             { bezeichnung: "Walnuss", preis: 1, type: "number", kategorie: "Eissorten", min: 0, max: 10, step: 1 },
             { bezeichnung: "Mystery", preis: 1, type: "number", kategorie: "Eissorten", min: 0, max: 10, step: 1 }
         ],
-        "Extras": [
+        "Topping": [
             { bezeichnung: "Sahne", preis: 0.50, type: "checkbox", kategorie: "Topping", min: 0, max: 0, step: 0 },
             { bezeichnung: "Streusel", preis: 0.30, type: "checkbox", kategorie: "Topping", min: 0, max: 0, step: 0 },
             { bezeichnung: "Schockosoße", preis: 0.40, type: "checkbox", kategorie: "Topping", min: 0, max: 0, step: 0 },

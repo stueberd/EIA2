@@ -42,8 +42,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         let input = document.getElementsByTagName("input");
         let num = 0;
         //alert(num);
-        document.getElementById("Beh").innerHTML = "";
         document.getElementById("Eis").innerHTML = "";
+        document.getElementById("Beh").innerHTML = "";
         document.getElementById("Top").innerHTML = "";
         document.getElementById("Lie").innerHTML = "";
         for (let w = 0; w < input.length; w++) {

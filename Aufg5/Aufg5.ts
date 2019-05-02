@@ -47,8 +47,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let num: number = 0;
         //alert(num);
-        document.getElementById("Beh").innerHTML = "";
         document.getElementById("Eis").innerHTML = "";
+        document.getElementById("Beh").innerHTML = "";
         document.getElementById("Top").innerHTML = "";
         document.getElementById("Lie").innerHTML = "";
         
