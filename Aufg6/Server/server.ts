@@ -16,7 +16,7 @@ namespace L05_Server {//namespace öffnen
     }//die Funktion wird geschlossen
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {//die Funktion empfängt zwei Parameter (request=Anfordern, response=Antwort) und gibt nichts zurück
-        console.log("I hear voices!"); //bei durchlaufen der Funktion wird I hear Voices in der Console angezeigt
+        console.log("Nein Nein" + _request.url); //bei durchlaufen der Funktion wird I hear Voices in der Console angezeigt
 
         _response.setHeader("content-type", "text/html; charset=utf-8"); //ein header wird zu_response(response stream) hinzugefügt 
         _response.setHeader("Access-Control-Allow-Origin", "*"); //der server _request darf von anderen Quellen als der Hauptseite ausgeführt werden

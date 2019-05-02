@@ -2,7 +2,7 @@
 Name: Dimitrios Stüber
 Matrikel: 257744
 Datum: 07.04.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. 
 
 
 namespace MauMau {
@@ -65,3 +65,4 @@ namespace MauMau {
             document.getElementById("hand").appendChild(card);
         }
     }
+*/
