@@ -1,98 +1,92 @@
-namespace EisdDealer {
-
+namespace EisDealer {
+    /*
+Aufgabe: Aufgabe 4, Eis Dealer
+Name: Dimitrios Stüber
+Matrikel: 257744
+Datum: 21.04.2019
+	
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
     window.addEventListener("load", init);
-    document.getElementById("orderDone").addEventListener("click", orderComplete);
-}
 
-function init(_event: Event): void {
-    console.log(init);
+    function init(): void {
+        let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
-    let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
-
-    for (let i: number = 0; i < fieldsets.length; i++) {
-        let fieldset: HTMLFieldSetElement = fieldsets[i];
-        fieldset.addEventListener("change", orderContent);
-        fieldset.addEventListener("change", orderPrice);
-        console.log(fieldset);
-    }
-}
-
-function orderPrice(_event: Event): void {
-    let orderSum: number = 0;
-    let orderPrice: number = 0;
-    let orderSelections: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-    for (let i: number = 0; i < orderSelections.length; i++) {
-        if (orderSelections[i].checked == true || orderSelections[i].name == "Schokolade" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Vanille" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Erdbeere" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Zitrone" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Joghurt" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Haselnuss" && Number(orderSelections[i].value) > 0) {
-            orderPrice = Number(orderSelections[i].value);
-            orderSum += orderPrice;
-            console.log(orderSum);
+        for (let i: number = 0; i < fieldsets.length; i++) {
+            let fieldset: HTMLFieldSetElement = fieldsets[i];
+            fieldset.addEventListener("change", aenderung);
+            document.getElementById("kontrolle").addEventListener("click", kontrolle);
         }
     }
-    document.getElementById("orderPrice").innerHTML = `Bestellzusammenfassung:  ${orderSum} €`;
-}
-
-function orderContent(_event: Event): void { /* Optionbereich des Dropdowns bisher nicht ansprechbar*/
-    let orderSelections: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-    document.getElementById("iceSelections").innerHTML = "Sorten: ";
-    document.getElementById("toppingSelections").innerHTML = "Extras: ";
-    document.getElementById("containerSelections").innerHTML = "Behälter: ";
-    document.getElementById("shippingSelections").innerHTML = "Versandart: ";
-    for (let i: number = 0; i < orderSelections.length; i++) {
-        if (orderSelections[i].checked == true) {
-            if (orderSelections[i].name == "toppingSelect1"
-                || orderSelections[i].name == "toppingSelect2"
-                || orderSelections[i].name == "toppingSelect3") {
-                let target = document.createElement("ul");
-                target.innerHTML = `${orderSelections[i].alt}, `;
-                document.getElementById("toppingSelections").appendChild(target);
-            } else if (orderSelections[i].name == "container") {
-                let target = document.createElement("ul");
-                target.innerHTML = `${orderSelections[i].alt}`;
-                document.getElementById("containerSelections").appendChild(target);
-            } else if (orderSelections[i].name == "shipping") {
-                let target = document.createElement("ul");
-                target.innerHTML = `${orderSelections[i].alt}`;
-                document.getElementById("shippingSelections").appendChild(target);
+  
+    let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+    function aenderung(_event: Event): void {
+        let num: number = 0;
+        document.getElementById("Beh").innerHTML = "";
+        document.getElementById("Eis").innerHTML = "";
+        document.getElementById("Top").innerHTML = "";
+        document.getElementById("Lie").innerHTML = "";
+        for (let w: number = 0; w < input.length - 1; w++) {
+            if (input[w].checked == true) {
+                let preis: number = Number(input[w].value);
+                num += preis;
+                document.getElementById("preis").innerHTML = String(num.toFixed(2));
+                if (input[w].name == "Behaelter") {
+                    let ziel: HTMLElement = document.createElement("li");
+                    ziel.innerHTML = `${input[w].id}`;
+                    document.getElementById("Beh").appendChild(ziel);
+                }
+                if (input[w].name == "Eissorte") {
+                    let ziel: HTMLElement = document.createElement("li");
+                    ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
+                    document.getElementById("Eis").appendChild(ziel);
+                }
+                if (input[w].name == "Topping") {
+                    let ziel: HTMLElement = document.createElement("li");
+                    ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
+                    document.getElementById("Top").appendChild(ziel);
+                }
+                if (input[w].name == "Lieferoption") {
+                    let ziel: HTMLElement = document.createElement("li");
+                    ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
+                    document.getElementById("Lie").appendChild(ziel);
+                }
             }
         }
-        if (orderSelections[i].name == "Schokolade" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Vanille" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Erdbeere" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Zitrone" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Joghurt" && Number(orderSelections[i].value) > 0
-            || orderSelections[i].name == "Haselnuss" && Number(orderSelections[i].value) > 0) {
-
-            let target = document.createElement("li");
-            target.innerHTML = `${orderSelections[i].value} Kugel (n) ${orderSelections[i].name}, `;
-            document.getElementById("iceSelections").appendChild(target);
+    }
+    function kontrolle(_event: Event): void {
+        let fehler: string = "";
+        let eisChecked: number = 0;
+        let adressChecked: number = 1;
+        if (input[0].checked == false && input[1].checked == false) {
+            fehler += "Behaelter " + String.fromCharCode(13);
+        }
+        for (let r: number = 2; r < 11; r++) {
+            if (input[r].checked == true) {
+                eisChecked = 1;
+            }
+        }
+        if (eisChecked == 0) {
+            fehler += "Eissorte " + String.fromCharCode(13);
+        }
+        if (input[17].checked == false && input[18].checked == false) {
+            fehler += "Lieferoption " + String.fromCharCode(13);
+        }
+        for (let d: number = 19; d < 25; d++) {
+            if (input[d].value == "") {
+                adressChecked = 0;
+            }
+        }
+        if (adressChecked == 0) {
+            fehler += "Adress Angaben" + String.fromCharCode(13);
+        }
+        if (fehler != "") {
+            alert("Es fehlen folgende Angaben: " + String.fromCharCode(13) + fehler);
+        }
+        else {
+            alert("Vielen Dank, deine Bestellung wird bearbeitet.");
         }
     }
-}
-
-function orderComplete(): void {
-    let deliveryStatus: number = 0;
-
-    let delivery1: HTMLInputElement = <HTMLInputElement>document.getElementById("normalShipping");
-    let delivery2: HTMLInputElement = <HTMLInputElement>document.getElementById("expressShipping");
-    let location: HTMLInputElement = <HTMLInputElement>document.getElementById("location");
-    let street: HTMLInputElement = <HTMLInputElement>document.getElementById("street");
-    let forename: HTMLInputElement = <HTMLInputElement>document.getElementById("forename");
-    let surename: HTMLInputElement = <HTMLInputElement>document.getElementById("surename");
 
 
-    if (delivery1.checked == true || delivery2.checked == true) {
-        deliveryStatus = 1;
-    }
-    if (location.value == ""
-        || street.value == ""
-        || forename.value == ""
-        || surename.value == ""
-        || deliveryStatus == 0) {
-        alert("Füllen Sie bitte alle Felder aus !");
-    }
-}
+} 

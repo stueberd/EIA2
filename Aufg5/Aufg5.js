@@ -41,7 +41,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     function aenderung(_event) {
         let input = document.getElementsByTagName("input");
         let num = 0;
-        //alert(num);
         document.getElementById("Eis").innerHTML = "";
         document.getElementById("Beh").innerHTML = "";
         document.getElementById("Top").innerHTML = "";
@@ -79,9 +78,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     }
     function kontrolle(_event) {
         let fehler = "";
-        let eisChecked = 0;
-        let behaelterCheck = 0;
-        let optionChecked = 0;
+        let eisChecked = 1;
+        let behaelterCheck = 1;
+        let optionChecked = 1;
         let adressChecked = 1;
         for (let d = 0; d < 6; d++) {
             if (input[d].name == "Postleitzahl ") {

@@ -46,7 +46,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     function aenderung(_event: Event): void {
         let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let num: number = 0;
-        //alert(num);
+
         document.getElementById("Eis").innerHTML = "";
         document.getElementById("Beh").innerHTML = "";
         document.getElementById("Top").innerHTML = "";
@@ -87,9 +87,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     }
     function kontrolle(_event: Event): void {
         let fehler: string = "";
-        let eisChecked: number = 0;
-        let behaelterCheck: number = 0;
-        let optionChecked: number = 0;
+        let eisChecked: number = 1;
+        let behaelterCheck: number = 1;
+        let optionChecked: number = 1;
         let adressChecked: number = 1;
 
         for (let d: number = 0; d < 6; d++) {

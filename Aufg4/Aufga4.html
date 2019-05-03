@@ -21,129 +21,121 @@
         <img src="icecream-vector.png">
     </header>
     <main> 
-        <!--Auswahl Dokumentbereich-->
-        <fieldset id="iceSelect">
-
-            <legend>Unsere Sorten</legend>
-            
-            <div class="iceSelect">
-                <span><input type="number" name="Schokolade" step="1" min="0" max="6" value="0">
-                    Schoko</span>
-                <span><input type="number" name="Vanille" step="1" min="0" max="6" value="0">
-                    Vanille</span>
-                <span><input type="number" name="Zitrone" step="1" min="0" max="6" value="0">
-                    Zitrone</span>
-                <span><input type="number" name="Joghurt" step="1" min="0" max="6" value="0">
-                    Joghurt</span>
-                <span><input type="number" name="Oreo" step="1" min="0" max="6" value="0">
-                    Oreo</span>
-                <span><input type="number" name="Schlumpf" step="1" min="0" max="6" value="0">
-                        Schlumpfeis</span>
-                <span><input type="number" name="Mystery" step="1" min="0" max="6" value="0">
-                            Mystery</span>
-            
-
+        <div></div>
+        <aside>
+            <h3>Ihre Bestellung</h3>
+            <div>
+                <p>Behälter:</p>
+                <ul id="Beh"></ul>
             </div>
+            <div>
+                <p>Eissorten:</p>
+                <ul id="Eis"></ul>
+            </div>
+            <div>
+                <p>Topping:</p>
+                <ul id="Top"></ul>
+            </div>
+            <div>
+                <p>Lieferoption:</p>
+                <ul id="Lie"></ul>
+            </div>
+            <hr>
+            <div id="summe">
+                <p>Summe</p>
+                <p id="preis"></p>
+                <p>€</p>
+                <button id="kontrolle">Bestellen</button>
+            </div>
+    
+    
+        </aside>
+        <div>
+        <fieldset id="behaelter">
+            <legend>Behälter</legend>
+            <input type="radio" name="Behaelter" value="0" id="Waffel" />
+            <label for="Waffel">Waffel</label>
+            <br>
+            <input type="radio" name="Behaelter" value="0" id="Becher"/>
+            <label for="Becher">Becher</label>
         </fieldset>
-        <fieldset id="toppingSelect">
-            <legend>Extras?</legend>
-            <div class="toppingSelect">
-                <input type="checkbox" name="toppingSelect1" id="creamTopping" alt="Sahne-Topping" value="0.8">
-                <label for="creamTopping">Sahne</label>
-            </div>
-            <div class="toppingSelect">
-                <input type="checkbox" name="toppingSelect2" id="chocolateTopping" alt="Schokoladen-Topping" value="0.8">
-                <label for="chocolateTopping">Schokoladensoße</label>
-            </div>
-            <div class="toppingSelect">
-                <input type="checkbox" name="toppingSelect3" id="strawberryTopping" alt="Erdbeer-Topping" value="0.8">
-                <label for="chocolateTopping">Erdbeersoße</label>
-            </div>
-            <div class="toppingSelect">
-                <input type="checkbox" name="toppingSelect4" id="crumbleTopping" alt="Streusel-Topping" value="0.8">
-                <label for="crumbleTopping">Streusel</label>
-            </div>
-           
-        </fieldset>
-        <fieldset id="containerSelect">
-            <legend>Behäter</legend>
+        <fieldset id="eissorten">
+            <legend>Eissorten</legend>
+            <input type="number" name="Schokolade" step="1" min="0" max="9" value="0" id="Schokolade"/>
+            <label for="Schokolade">Schokolade</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9" value="0" id="Vanille"/>
+            <label for="Vanille">Vanille</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Erdbeere"/>
+            <label for="Erdbeere">Erdbeer</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Himbeere"/>
+            <label for="Himbeere">Himbeer</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Oreo"/>
+            <label for="Oreo">Oreo</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Schlumpf"/>
+            <label for="Schlumpf">Schlumpfeis</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Yogurt"/>
+            <label for="Yogurt">Yogurt</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Walnuss"/>
+            <label for="Walnuss">Walnuss</label>
+            <br>
+            <input type="number" name="Eissorte" step="1" min="0" max="9"  value="0" id="Mystery"/>
+            <label for="Mystery">Mystery</label>
             
-            <div class="containerSelect">
-                <input type="radio" name="container" id="waffle" alt="Waffel" value="0">
-                <label for="waffle">Waffel</label>
-            </div>
-            <div class="containerSelect">
-                <input type="radio" name="container" id="cup" alt="Becher" value="0">
-                <label for="cup">Becher</label>
-            </div>
         </fieldset>
-        <fieldset id="shippingSelect">
-            <legend>Versandoptionen</legend>
-            
-            <div class="shippingSelect">
-                <input type="radio" name="shipping" id="normalShipping" alt="Normal-Versand" value="0"
-                    EDprice="2">
-                <label for="normalShipping">Albholung</label>
-            </div>
-            <div class="shippingSelect">
-                <input type="radio" name="shipping" id="expressShipping" alt="Express-Versand" value="0"
-                    EDprice="5">
-                <label for="expressShipping">Lieferung</label>
-            </div>
+        <fieldset id="topping">
+            <legend>Topping</legend>
+            <input type="checkbox" name="Topping" value="0.50" id="Sahne"/>
+            <label for="Sahne">Sahne</label>
+            <br>
+            <input type="checkbox" name="Topping" value="0.30" id="Schockostreusel"/>
+            <label for="Schockostreusel">Schockostreusel</label>
+            <br>
+            <input type="checkbox" name="Topping" value="0.40" id="Schockosoße"/>
+            <label for="Schockosoße">Schocko Soße</label>
+            <br>
+            <input type="checkbox" name="Topping" value="0.40" id="Erdsoße"/>
+            <label for="Erdsoße">Erdbeer Soße</label>
+            <br>
+            <input type="checkbox" name="Topping" value="0.50" id="Schokowaffel"/>
+            <label for="Schokowaffel">Schokowaffel</label>
+            <br>
         </fieldset>
-        <form> 
-            <fieldset id="formSelect">
-                <legend>Deine Daten</legend>
-                
-                <div class="formData">
-                    <div class="formName">
-                        <label for="forename">Vorname</label>
-                        <input type="text" id="forename" name="forename">
-                        <label for="surname">Nachname</label>
-                        <input type="text" id="surname" name="surname">
-                    </div>
-                    <div class="formAdress">
-                        <label for="location">Ort</label>
-                        <input type="text" id="location" name="location" placeholder="Ort" required="1">
-                        <label for="street">Straße</label>
-                        <input type="text" id="street" name="street" placeholder="Straße" required="1">
-                        <label for="numberHouse">Hausnummer</label>
-                        <input type="number" id="numberHouse" name="count2" step="1" min="0" max="999" value="0"
-                            required="required">
-                    </div>
-                </div>
-                <legend>Zahlungsart</legend>l
-                <div class="formPayment">
-                    <div class="paymentSelect">
-                        <input type="radio" name="payment" id="cashPayment" value="0" required>
-                        <label for="cashPayment">Bar</label>
-                    </div>
-                    <div class="paymentSelect">
-                        <input type="radio" name="payment" id="cardPayment" value="0" required>
-                        <label for="cardPayment">Karte</label>
-                    </div>
-                    <div class="paymentSelect">
-                        <input type="radio" name="payment" id="paypalPayment" value="0" required>
-                        <label for="paypalPayment">PayPal</label>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-        <div class="sidebar"> 
-            <h3> Deine Bestellung:</h3>
-            <div id="orderSummary">
-                <span id="iceSelections"> </span>
-                <span id="toppingSelections"> </span>
-                <span id="containerSelections"> </span>
-                <span id="shippingSelections"> </span>
-                <span id="orderPrice"> </span>
-
-            </div>
-            <button class="buttonAside" id="orderDone"> Bestellung überprüfen </button> 
-
+        <fieldset id="lieferoption">
+            <legend>Lieferoption</legend>
+            <input type="radio" name="Lieferoption" value="0.00" id="Abhol" />
+            <label for="Abhol">zum Abholen</label>
+            <br>
+            <input type="radio" name="Lieferoption" value="3.50" id="Liefer"/>
+            <label for="Liefer">zum Liefern</label>
+        </fieldset>
+        <fieldset id="adresse">
+            <legend>Lieferadresse</legend>
+            <label for="name">Name</label>
+            <input type="text" name="Name" id="name" placeholder="Nachname" required/>
+            <label for="vorname">Vorname</label>
+            <input type="text" name="Vorname" id="vorname" placeholder="Vorname" required/>
+            <br>
+            <label for="straße">Straße</label>
+            <input type="text" name="Straße" id="straße" placeholder="Straße" required/>
+            <label for="hausnr">Hausnummer</label>
+            <input type="text" name="Hausnummer" id="hausnr" placeholder="Nr" pattern="[0-9]{1-2}"/>
+            <br>
+            <label for="postle">Postleitzahl</label>
+            <input type="text" name="Postleitzahl" id="postle" placeholder="PLZ" pattern="[0-9]{5}"/>
+            <label for="ort">Ort</label>
+            <input type="text" name="Ort" id="ort" placeholder="Ort" required/>
+        </fieldset>
         </div>
     </main>
-</body>
-
-
-</html>
+    <footer>
+    </footer>
+    </body>
+   
+    
