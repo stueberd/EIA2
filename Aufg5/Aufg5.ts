@@ -103,27 +103,27 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
             }
         }
         for (let z: number = 0; z < input.length; z++) {
-            if (input[z].name == "Behälter " && input[z].checked == true) {
+            if (input[z].name == "Behälter" && input[z].checked == true) {
                 behaelterCheck = 1;
             }
-            if (input[z].name == "Eissorten " && Number(input[z].value) > 0) {
+            if (input[z].name == "Eissorten" && Number(input[z].value) > 0) {
                 eisChecked = 1;
             }
-            if (input[z].name == "Lieferoption " && input[z].checked == true) {
+            if (input[z].name == "Lieferoption" && input[z].checked == true) {
                 optionChecked = 1;
             }
         }
         if (adressChecked == 0) {
-            fehler += "Adress Angaben " + String.fromCharCode(13);
+            fehler += "Adress Angaben" + String.fromCharCode(13);
         }
         if (eisChecked == 0) {
-            fehler += "Eissorten " + String.fromCharCode(13);
+            fehler += "Eissorten" + String.fromCharCode(13);
         }
         if (behaelterCheck == 0) {
-            fehler += "Behälter " + String.fromCharCode(13);
+            fehler += "Behälter" + String.fromCharCode(13);
         }
         if (optionChecked == 0) {
-            fehler += "Lieferoption " + String.fromCharCode(13);
+            fehler += "Lieferoption" + String.fromCharCode(13);
         }
 
         if (fehler != "") {

@@ -1,16 +1,17 @@
-var EisDealer;
-(function (EisDealer) {
+var EisDealer1;
+(function (EisDealer1) {
     /*
-Aufgabe: Aufgabe 5, Eis Dealer reloaded
-Name: Dimitrios Stüber
-Matrikel: 2257744
-Datum: 27.04.2019
+   Aufgabe: Aufgabe 6, Eis Dealer re-reloaded
+   Name: Dimitrios Stüber
+   Matrikel: 2257744
+   Datum: 04.05.2019
     
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-*/
+   Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+   */
     window.addEventListener("load", init);
+    let zuServer = "https://eia2-stueberd.herokuapp.com/";
     function init() {
-        writeHTML(EisDealer.angebot);
+        writeHTML(EisDealer1.angebot);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
@@ -121,6 +122,23 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         else {
             alert("Deine Bestellung wurde entgegengenommen. Vielen Dank");
         }
+        /*datenÜbergeben();
+        let schreib: XMLHttpRequest = new XMLHttpRequest();
+        schreib.open("GET", address);
+        schreib.addEventListener("readystatechange", handleStateChange);
+        schreib.send();*/
     }
-})(EisDealer || (EisDealer = {}));
-//# sourceMappingURL=Aufg5.js.map
+    function datenÜbergeben() {
+        let input = document.getElementsByTagName("input");
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].getAttribute("kategorie") == "Eissorten" && Number(input[i].value) != 0) {
+                zuServer += `${input[i].name}=${input[i].value}&`;
+            }
+            if (input[i].type == "radio" && input[i].checked == true || input[i].type == "checkbox" && input[i].checked == true) {
+                zuServer += `${input[i].name}&`;
+            }
+        }
+        window.open(zuServer);
+    }
+})(EisDealer1 || (EisDealer1 = {}));
+//# sourceMappingURL=Aufg6-main.js.map
