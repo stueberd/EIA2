@@ -124,10 +124,6 @@ var EisDealer1;
             alert("Deine Bestellung wurde entgegengenommen. Vielen Dank");
         }
         datenÜbergeben();
-        /*let schreib: XMLHttpRequest = new XMLHttpRequest();
-        schreib.open("GET", address);
-        schreib.addEventListener("readystatechange", handleStateChange);
-        schreib.send();*/
     }
     function datenÜbergeben() {
         let input = document.getElementsByTagName("input");

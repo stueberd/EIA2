@@ -134,10 +134,7 @@ namespace EisDealer1 {
             alert("Deine Bestellung wurde entgegengenommen. Vielen Dank");
         }
         datenÜbergeben();
-        /*let schreib: XMLHttpRequest = new XMLHttpRequest();
-        schreib.open("GET", address);
-        schreib.addEventListener("readystatechange", handleStateChange);
-        schreib.send();*/
+
     }
     function datenÜbergeben(): void {
         let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
