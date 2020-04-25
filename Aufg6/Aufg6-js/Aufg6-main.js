@@ -9,8 +9,8 @@ var EisDealer1;
    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
    */
     window.addEventListener("load", init);
-    //let aufServer: string = "https://eia2-stueberd.herokuapp.com/";
-    let aufServer = "http://localhost8100";
+    let aufServer = "https://eia2-stueberd.herokuapp.com/";
+    // let aufServer: string = "http://localhost8100";
     function init() {
         writeHTML(EisDealer1.angebot);
         let fieldsets = document.getElementsByTagName("fieldset");
