@@ -1,0 +1,33 @@
+body {
+    background-color: #45c9e0;
+    color: rgb(252, 251, 250) ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+main {
+    margin-right: 200px; 
+    padding: 10px 10px;
+  }
+
+
+h1 {
+    position: relative;
+    margin-right: 200px;
+    text-align: center;
+    text-transform: uppercase;
+}
+    input[required]:after {
+        content:" * ";
+      }
+    
+    legend {
+        margin: 0 auto;
+        
+    }
+    fieldset {
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(117, 116, 116, 0.8);
+        min-height: 120px;
+        border-color: rgb(250, 138, 1) 3px solid;
+    
+    }
