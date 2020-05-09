@@ -1,13 +1,6 @@
-var EisDealer;
-(function (EisDealer) {
-    /*
-Aufgabe: Aufgabe 4, Eis Dealer
-Name: Dimitrios Stüber
-Matrikel: 257744
-Datum: 21.04.2019
-    
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-*/
+var CoronaHilfe;
+(function (CoronaHilfe) {
+
     window.addEventListener("load", init);
     function init() {
         let fieldsets = document.getElementsByTagName("fieldset");
@@ -20,34 +13,28 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     let input = document.getElementsByTagName("input");
     function aenderung(_event) {
         let num = 0;
-        document.getElementById("Beh").innerHTML = "";
-        document.getElementById("Eis").innerHTML = "";
-        document.getElementById("Top").innerHTML = "";
-        document.getElementById("Lie").innerHTML = "";
+        document.getElementById("EK").innerHTML = "";
+        document.getElementById("HA").innerHTML = "";
+        document.getElementById("ZO").innerHTML = "";
         for (let w = 0; w < input.length - 1; w++) {
             if (input[w].checked == true) {
                 let preis = Number(input[w].value);
                 num += preis;
                 document.getElementById("preis").innerHTML = String(num.toFixed(2));
-                if (input[w].name == "Behaelter") {
+                if (input[w].name == "Einkaufen") {
                     let ziel = document.createElement("li");
                     ziel.innerHTML = `${input[w].id}`;
-                    document.getElementById("Beh").appendChild(ziel);
+                    document.getElementById("EK").appendChild(ziel);
                 }
-                if (input[w].name == "Eissorte") {
+                if (input[w].name == "Hausarbeit") {
                     let ziel = document.createElement("li");
                     ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
-                    document.getElementById("Eis").appendChild(ziel);
+                    document.getElementById("HA").appendChild(ziel);
                 }
-                if (input[w].name == "Topping") {
+                if (input[w].name == "Zahlungsoption") {
                     let ziel = document.createElement("li");
                     ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
-                    document.getElementById("Top").appendChild(ziel);
-                }
-                if (input[w].name == "Lieferoption") {
-                    let ziel = document.createElement("li");
-                    ziel.innerHTML = `${input[w].id} ${input[w].value} €`;
-                    document.getElementById("Lie").appendChild(ziel);
+                    document.getElementById("ZO").appendChild(ziel);
                 }
             }
         }
@@ -64,11 +51,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                 eisChecked = 1;
             }
         }
-        if (eisChecked == 0) {
-            fehler += "Eissorte " + String.fromCharCode(13);
-        }
         if (input[17].checked == false && input[18].checked == false) {
-            fehler += "Lieferoption " + String.fromCharCode(13);
+            fehler += "LZahlungsoption " + String.fromCharCode(13);
         }
         for (let d = 19; d < 25; d++) {
             if (input[d].value == "") {
@@ -85,5 +69,5 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
             alert("Vielen Dank, deine Bestellung wird bearbeitet.");
         }
     }
-})(EisDealer || (EisDealer = {}));
+})(CoronaHilfe || (CoronaHilfe = {}));
 //# sourceMappingURL=Aufga4.js.map

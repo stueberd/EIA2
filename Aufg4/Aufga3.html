@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Hilfsformular</title>
+    <link rel="stylesheet" type="text/css" href="Aufga3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <script src="Aufga3.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1> Corona Hilfe</h1>
+    </header>
+    <main> 
+        <div></div>
+        <aside>
+            <h3>Ihre Bestellung</h3>
+            <div>
+                <p>Einkaufen</p>
+                <ul id="EK"></ul>
+            </div>
+            <div>
+                <p>Hausarbeiten</p>
+                <ul id="HA"></ul>
+            </div>
+            <div>
+                <p>Zahlungoption</p>
+                <ul id="ZO"></ul>
+            </div>
+            <div>
+                <p>Daten</p>
+                <ul id="PD"></ul>
+            </div>
+            <hr>
+            <div id="summe">
+                <p>Summe</p>
+                <p id="preis"></p>
+                <p>€</p>
+                <button id="kontrolle">Bestellen</button>
+            </div>
+    
+    
+        </aside>
+        <div>
+        <fieldset id="einkaufen">
+            <legend>Einkaufen</legend>
+            <label for="Einkaufen">Einkaufsliste</label>
+            <input type="textarea" name="Einkaufen" rows="20" cols="200" placeholder="Geben Sie hier die gewünschten Waren ein und bestenfalls auch in welchem Laden diese zu erwäben sind"/>
+            <br>
+            <input type="radio" name="Einkaufen" value="0" id="Taegl" />
+            <label for="Taegl">Täglich</label>
+            <br>
+            <input type="radio" name="Einkaufen" value="0" id="Woechr"/>
+            <label for="Woech">Wöchentlich</label>
+            <br>
+            <input type="range" name="Wert"  step="10" min="10" max="200"/>
+            <label for="Wert">€ Wert den es Kosten könnte</label>
+            
+        </fieldset>
+        <fieldset id="hausarbeit">
+            <legend>Hausarbeiten und anderes</legend>
+            <input type="checkbox" name="Hausarbeit" value="0.50" id="Putzen"/>
+            <label for="Putzen">Putzen</label>
+            <br>
+            <input type="checkbox" name="Hausarbeit" value="0.50" id="Gassi"/>
+            <label for="Gassi">Gassi gehen</label>
+            <br>
+            <input type="checkbox" name="Hausarbeit" value="0.50" id="Rasen"/>
+            <label for="Rasen">Rasenmähen</label>
+            <br>
+            <input type="checkbox" name="Hausarbeit" value="0.50" id="Pflanzen"/>
+            <label for="Planzenn">Pflanzen Gießen</label>
+            <br>
+            <input type="checkbox" name="Hausarbeit" value="0.50" id="Post"/>
+            <label for="Post">zur Post gehen</label>
+            <br>
+            <label for="Weiteres">Weiteres</label>
+            <input type="textarea" name="Weiteres" rows="20" cols="50" placeholder="Weitere zu erledigende Arbeiten"/>
+            <br>
+        </fieldset>
+        <fieldset id="zahlungoption">
+            <legend>Zahlungoption</legend>
+            <input type="radio" name="Zahlungoption" id="Bar" />
+            <label for="Bar">in Bar zahlen</label>
+            <br>
+            <input type="radio" name="Zahlungoption" id="Ueberweisung" />
+            <label for="Ueberweisung">Zahlen per Überweisung</label>
+            <br>
+            <input type="radio" name="Zahlungoption" value="0.00" id="Paypal" />
+            <label for="Paypal">zahlen mit Paypal</label>
+            <br>
+        </fieldset>
+        <fieldset id="adresse">
+            <legend>Lieferadresse</legend>
+            <label for="name">Name</label>
+            <input type="text" name="Name" id="name" placeholder="Nachname" required/>
+            <label for="vorname">Vorname</label>
+            <input type="text" name="Vorname" id="vorname" placeholder="Vorname" required/>
+            <br>
+            <label for="straße">Straße</label>
+            <input type="text" name="Straße" id="straße" placeholder="Straße" required/>
+            <label for="hausnr">Hausnummer</label>
+            <input type="text" name="Hausnummer" id="hausnr" placeholder="Nr" pattern="[0-9]{1-2}"/>
+            <br>
+            <label for="postle">Postleitzahl</label>
+            <input type="text" name="Postleitzahl" id="postle" placeholder="PLZ" pattern="[0-9]{5}"/>
+            <label for="ort">Ort</label>
+            <input type="text" name="Ort" id="ort" placeholder="Ort" required/>
+        </fieldset>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    </body>
+   
+    

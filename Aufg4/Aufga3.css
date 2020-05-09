@@ -82,11 +82,11 @@ input[type="checkbox"]{
     margin-top:1em;
     width:3em;
 }
-#behaelter{
+#einkaufen{
     display:flex;
     margin-left: 0em;
 }
-#lieferoption{
+#zahlungsoption{
     display:flex;
     margin-left: 0em;
 }
