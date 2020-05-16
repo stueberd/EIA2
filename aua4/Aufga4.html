@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+       
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>CoronaHilfe</title>
+            <link rel="stylesheet" href="Aufga4.css">
+            <script src="Aufga4.js" type="text/javascript" charset="utf-8"></script>
+            <script src="Aufga4Data.js" type="text/javascript" charset="utf-8"></script>
+             
+    </head>
+<body>
+    
+
+<header>
+    <h1>Corona Hilfe</h1>
+    
+</header>
+<main>
+    <div></div>
+    <aside>
+        <h3>Ihre Bestellung</h3>
+        <div id=bestellung></div>
+        <hr>
+        <div id="summe">
+            <p>Summe</p>
+            <p id="preis"></p>
+            <p>€</p>
+            <button id="kontrolle">hier Bestellen</button>
+        </div>
+    </aside>
+    <div id="offer">
+    <fieldset id="adresse">
+        <legend>Lieferadresse</legend>
+        <label for="name">Name</label>
+        <input type="text" name="Name" id="name" placeholder="Nachname" required/>
+        <label for="vorname">Vorname</label>
+        <input type="text" name="Vorname" id="vorname" placeholder="Vorname" required/>
+        <br>
+        <label for="straße">Straße</label>
+        <input type="text" name="Straße" id="straße" placeholder="Straße" required/>
+        <label for="hausnr">Hausnummer</label>
+        <input type="text" name="Hausnummer" id="hausnr" placeholder="Nr" pattern="[0-9]{1-2}">
+        <br>
+        <label for="postle">Postleitzahl</label>
+        <input type="text" name="Postleitzahl" id="postle" placeholder="PLZ" pattern="[0-9]{5}">
+        <label for="ort">Ort</label>
+        <input type="text" name="Ort" id="ort" placeholder="Stadt" required/>
+    </fieldset>
+    </div>
+</main>
+<footer>
+    
+</footer>
+</body>
