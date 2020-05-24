@@ -1,10 +1,30 @@
+html{
+    background-color: rgb(0, 225, 255);
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 1rem
+}
+header{
+    background-color: #1698e4;
+    z-index:999;
+    width: 100%;
+    position:fixed;
+        top:0;
+        left:0;
+        right:0;
+    padding-bottom: 0.4em; 
+
+}
+fieldset{
+    border-radius: 0.7em;
+    border-color: #f5f4f2;
+    border-width: 1em;
+    padding:1em;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    text-align: center;
-}
+
 
 .leftside {
     width:60%;
