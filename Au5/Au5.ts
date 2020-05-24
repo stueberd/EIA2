@@ -30,6 +30,7 @@ namespace CoronaHilfe {
     async function sendOrder(_event: Event): Promise<void> {
         console.log("send order");
         let formData: FormData = new FormData (document.forms[0]);
+        // tslint:disable-next-line:no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         await fetch("Haushaltshilfe_L05.html?" + query.toString());
         alert("Order sent!");
