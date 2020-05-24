@@ -1,4 +1,4 @@
-namespace CorinaHilfe {
+namespace CoronaHilfe1 {
 
 
     export interface Category {

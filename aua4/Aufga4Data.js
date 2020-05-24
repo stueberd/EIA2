@@ -1,5 +1,5 @@
-var CoronaHilfe;
-(function (CoronaHilfer) {
+var CoronaHilfe1;
+(function (CoronaHilfe1) {
 
     CoronaHilfe.offer = {
         "Service": [

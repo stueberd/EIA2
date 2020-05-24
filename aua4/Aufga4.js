@@ -1,4 +1,4 @@
-var CoronaHilfe;
+var CoronaHilfe1;
 (function (CoronaHilfe) {
     /*
 Aufgabe: Aufgabe 5, Eis Dealer reloaded

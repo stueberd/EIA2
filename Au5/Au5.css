@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.leftside {
+    width:60%;
+    position: absolute;
+    top: 15%;
+}
+
+.rightside {
+    position: absolute;
+    left: 70%;
+    top: 15%;
+    width: 30%; 
+}
+
+footer {
+    font-size: small;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+#trash :hover {
+    color: red;
+}
