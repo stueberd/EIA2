@@ -1,5 +1,5 @@
 import * as Http from "http"; //erstellen eines Http-Objekts, in Node 
-namespace L05_Server {//namespace öffnen
+namespace CoronaHilfe1 {//namespace öffnen
     console.log("Starting server"); //'Start server' soll ausgegeben werden in der Console
     let port: number = Number(process.env.PORT); // Variable port ist ein string der in eine number umgewandelt wird, damit der Server weiß, auf welchen Listener er hören soll
     if (!port)//wenn port keine Nummer ist

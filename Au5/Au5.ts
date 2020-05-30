@@ -1,4 +1,5 @@
 namespace CoronaHilfe {
+    
     window.addEventListener("load", handleLoad);
 
     let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#orderForm");
