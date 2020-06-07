@@ -11,6 +11,8 @@
 		"node": "8.11.3"
 	},
 	"dependencies": {
-		"@types/node": "^11.13.8"
+		"@types/mongodb": "^3.5.20",
+		"@types/node": "^11.13.8",
+		"mongodb": "^3.5.8"
 	}
 }
