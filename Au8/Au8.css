@@ -1,0 +1,11 @@
+
+/*@media screen and (max-width: 599px){
+    canvas { width: 450px;
+         height: 200px;
+    }
+}
+@media screen and (min-width: 600px) {
+        canvas{
+            width: 10%;
+        }
+}

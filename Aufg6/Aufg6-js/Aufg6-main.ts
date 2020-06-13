@@ -1,12 +1,6 @@
 namespace EisDealer1 {
-    /*
-   Aufgabe: Aufgabe 6, Eis Dealer re-reloaded
-   Name: Dimitrios Stüber
-   Matrikel: 2257744
-   Datum: 04.05.2019
-   	
-   Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-   */
+
+   
     window.addEventListener("load", init);
     let aufServer: string = "https://eia2-stueberd.herokuapp.com/";
    // let aufServer: string = "http://localhost8100";
