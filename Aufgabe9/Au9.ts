@@ -37,8 +37,8 @@ namespace L09_Virus {
         console.log("Background");
         
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
-        gradient.addColorStop(0, "#FF938E");
-        gradient.addColorStop(1, "#FD2117");
+        gradient.addColorStop(0, "HSLA(100, 72%, 61%, 0.6)");
+        gradient.addColorStop(1, "HSLA(100, 72%, 49%, 1)");
         
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
@@ -56,7 +56,7 @@ namespace L09_Virus {
         pattern.canvas.width = 40;
         pattern.canvas.height = 20;
         
-        // pattern.fillStyle = "hsla(0, 100%, 60%, 0.1)";
+        pattern.fillStyle = "hsla(0, 100%, 60%, 0.1)";
         pattern.fillRect(0, 0, pattern.canvas.width, pattern.canvas.height);
         pattern.moveTo(0, 10);
         pattern.lineTo(10, 10);
@@ -66,7 +66,7 @@ namespace L09_Virus {
         pattern.lineTo(30, 20);
         pattern.lineTo(20, 20);
         pattern.lineTo(10, 10);
-        // pattern.strokeStyle = "#FB0C01";
+        pattern.strokeStyle = "#FB0C01";
        
         pattern.strokeStyle = "#FB0C01";
         pattern.stroke();
