@@ -1,4 +1,3 @@
-"use strict";
 var CoronaHilfe;
 (function (CoronaHilfe) {
     function generateContent(_data) {
@@ -31,7 +30,7 @@ var CoronaHilfe;
             }
         }
     }
-    L05_Homehelper.generateContent = generateContent;
+    CoronaHilfe.generateContent = generateContent;
     function createDataList(_items, _category) {
         console.log("Einkauf");
         let group = document.createElement("div");

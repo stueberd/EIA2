@@ -1,7 +1,6 @@
 var CoronaHilfe1;
 (function (CoronaHilfe1) {
-
-    CoronaHilfe.offer = {
+    CoronaHilfe1.offer = {
         "Service": [
             { bezeichnung: "Enkaufen", preis: 0, type: "radio", category: "Service", min: 0, max: 0, step: 0 },
             { bezeichnung: "Haushalt", preis: 0, type: "radio", category: "Service", min: 0, max: 0, step: 0 }
@@ -21,12 +20,11 @@ var CoronaHilfe1;
             { bezeichnung: "Barzahlung", preis: 0, type: "checkbox", category: "ZahlungsOption", min: 0, max: 0, step: 0 },
             { bezeichnung: "Überweisung", preis: 0, type: "checkbox", category: "ZahlungsOption", min: 0, max: 0, step: 0 },
             { bezeichnung: "Paypal", preis: 0, type: "checkbox", category: "ZahlungsOption", min: 0, max: 0, step: 0 }
-            
         ],
         "Lieferoption": [
             { bezeichnung: "Abholer", preis: 2.00, type: "radio", category: "Lieferoption", min: 0, max: 0, step: 0 },
             { bezeichnung: "Lieferung", preis: 3.50, type: "radio", category: "Lieferoption", min: 0, max: 0, step: 0 }
         ]
     };
-})(CoronaHilfe || (CoronaHilfe = {}));
+})(CoronaHilfe1 || (CoronaHilfe1 = {}));
 //# sourceMappingURL=Aufga4Data.js.map

@@ -1,6 +1,5 @@
 var CoronaHilfe;
 (function (CoronaHilfe) {
-
     window.addEventListener("load", init);
     function init() {
         let fieldsets = document.getElementsByTagName("fieldset");
@@ -44,7 +43,7 @@ var CoronaHilfe;
         let eisChecked = 0;
         let adressChecked = 1;
         if (input[0].checked == false && input[1].checked == false) {
-            fehler += "Behaelter " + String.fromCharCode(13);
+            fehler += "Einkaufen " + String.fromCharCode(13);
         }
         for (let r = 2; r < 11; r++) {
             if (input[r].checked == true) {
@@ -52,7 +51,7 @@ var CoronaHilfe;
             }
         }
         if (input[17].checked == false && input[18].checked == false) {
-            fehler += "LZahlungsoption " + String.fromCharCode(13);
+            fehler += "Zahlungsoption " + String.fromCharCode(13);
         }
         for (let d = 19; d < 25; d++) {
             if (input[d].value == "") {
@@ -70,4 +69,4 @@ var CoronaHilfe;
         }
     }
 })(CoronaHilfe || (CoronaHilfe = {}));
-//# sourceMappingURL=Aufga4.js.map
+//# sourceMappingURL=Aufga3.js.map

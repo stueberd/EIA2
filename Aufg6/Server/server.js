@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http"); //erstellen eines Http-Objekts, in Node 
-var L05_Server;
-(function (L05_Server) {
+var CoronaHilfe1;
+(function (CoronaHilfe1) {
     console.log("Starting server"); //'Start server' soll ausgegeben werden in der Console
     let port = Number(process.env.PORT); // Variable port ist ein string der in eine number umgewandelt wird, damit der Server weiß, auf welchen Listener er hören soll
     if (!port) //wenn port keine Nummer ist
@@ -21,5 +21,5 @@ var L05_Server;
         _response.write(_request.url); //die url wird in _respons durch _request geschrieben
         _response.end(); //signalisiert dem Server vollständing zu sein und schließt _response ab
     } //die Funktion wird geschlossen
-})(L05_Server || (L05_Server = {})); //namespace schließen
+})(CoronaHilfe1 || (CoronaHilfe1 = {})); //namespace schließen
 //# sourceMappingURL=server.js.map

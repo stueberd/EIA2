@@ -55,8 +55,8 @@ var CoronaCanvas;
         for (let i = 0; i < nViruses; i++) {
             // let virus: Path2D = new Path2D();
             let gradient = crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
-            gradient.addColorStop(0, "HSLA(100, 72%, 49%, 1)");
-            gradient.addColorStop(1, "HSLA(100, 72%, 61%, 0.6)");
+            gradient.addColorStop(0, "HSLA(100, 72%, 61%, 0.6)");
+            gradient.addColorStop(1, "HSLA(100, 72%, 49%, 1)");
             // Position
             let x = (Math.random() * _position.x);
             let y = (Math.random() * _position.y);
@@ -77,7 +77,7 @@ var CoronaCanvas;
                 crc2.closePath();
                 crc2.save();
             }
-            // Kreis bzw. Membran
+            //  Membran
             crc2.save();
             crc2.translate(x, y);
             crc2.fillStyle = gradient;
@@ -165,3 +165,4 @@ var CoronaCanvas;
         }
     }
 })(CoronaCanvas || (CoronaCanvas = {}));
+//# sourceMappingURL=Au8.js.map

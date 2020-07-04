@@ -1,13 +1,5 @@
 var CoronaHilfe1;
-(function (CoronaHilfe) {
-    /*
-Aufgabe: Aufgabe 5, Eis Dealer reloaded
-Name: Dimitrios Stüber
-Matrikel: 2257744
-Datum: 27.04.2019
-    
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-*/
+(function (CoronaHilfe1) {
     window.addEventListener("load", init);
     function init() {
         writeHTML(CoronaHilfe.offer);
@@ -57,10 +49,10 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                     if (input[w].value != "0") {
                         ziel.innerHTML = `${input[w].value}x ${input[w].id} ${Number(Number(input[w].value) * Number(input[w].getAttribute("preis"))).toFixed(2)} €`;
                         num += Number(input[w].value) * Number(input[w].getAttribute("preis"));
-                        document.getElementById("Eis").appendChild(ziel);
+                        document.getElementById("Pro").appendChild(ziel);
                     }
                 }
-                if (input[w].name == "TZahlungOption" && input[w].checked == true) {
+                if (input[w].name == "ZahlungsOption" && input[w].checked == true) {
                     let ziel = document.createElement("li");
                     ziel.innerHTML = `${input[w].id} ${Number(input[w].getAttribute("preis")).toFixed(2)} €`;
                     num += Number(input[w].getAttribute("preis"));
@@ -106,10 +98,10 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
         if (adressChecked == 0) {
             fehler += "Adress Angaben" + String.fromCharCode(13);
         }
-        if (eisChecked == 0) {
+        if (proChecked == 0) {
             fehler += "Products" + String.fromCharCode(13);
         }
-        if (behaelterCheck == 0) {
+        if (serviceCheck == 0) {
             fehler += "Service" + String.fromCharCode(13);
         }
         if (optionChecked == 0) {
@@ -122,5 +114,5 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
             alert("Deine Bestellung wurde entgegengenommen. Vielen Dank");
         }
     }
-})(EisDealer || (EisDealer = {}));
+})(CoronaHilfe1 || (CoronaHilfe1 = {}));
 //# sourceMappingURL=Aufga4.js.map

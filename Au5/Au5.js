@@ -1,30 +1,42 @@
-"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var CoronaHilfe;
 (function (CoronaHilfe) {
     window.addEventListener("load", handleLoad);
     let form = document.querySelector("#orderForm");
-    async function handleLoad(_event) {
-        console.log("Die Anwendung startet");
-        let response = await fetch("Data.json");
-        let offer = await response.text();
-        let data = JSON.parse(offer);
-        L05_Homehelper.generateContent(data);
-        let handleform = document.querySelector("#orderForm");
-        handleform.addEventListener("change", handleChange);
-        let slider = document.querySelector("#amount");
-        slider.addEventListener("input", displayAmount);
-        let submit = document.querySelector("button[type=button]");
-        console.log(submit);
-        submit.addEventListener("click", sendOrder);
-        let reset = document.querySelector("button[type=reset]");
-        reset.addEventListener("click", resetOrder);
+    function handleLoad(_event) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("Die Anwendung startet");
+            let response = yield fetch("Data.json");
+            let offer = yield response.text();
+            let data = JSON.parse(offer);
+            CoronaHilfe.generateContent(data);
+            let handleform = document.querySelector("#orderForm");
+            handleform.addEventListener("change", handleChange);
+            let slider = document.querySelector("#amount");
+            slider.addEventListener("input", displayAmount);
+            let submit = document.querySelector("button[type=button]");
+            console.log(submit);
+            submit.addEventListener("click", sendOrder);
+            let reset = document.querySelector("button[type=reset]");
+            reset.addEventListener("click", resetOrder);
+        });
     }
-    async function sendOrder(_event) {
-        console.log("send order");
-        let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
-        await fetch("Haushaltshilfe_L05.html?" + query.toString());
-        alert("Order sent!");
+    function sendOrder(_event) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("send order");
+            let formData = new FormData(document.forms[0]);
+            // tslint:disable-next-line:no-any
+            let query = new URLSearchParams(formData);
+            yield fetch("Haushaltshilfe_L05.html?" + query.toString());
+            alert("Order sent!");
+        });
     }
     function handleChange(_event) {
         displayOrder(_event);
@@ -102,4 +114,4 @@ var CoronaHilfe;
         payment.innerHTML = "";
     }
 })(CoronaHilfe || (CoronaHilfe = {}));
-//# sourceMappingURL=Haushaltshilfe_script.js.map
+//# sourceMappingURL=Au5.js.map
