@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Minimal server just bouncing the URL",
 	"author": "Jirka, adapted by Lukas adapted by Dimi",
-	"main": "Server.js",
+	"main": "server.js",
 	"scripts": {
 		"start": "node EIA2/KopieEndabgabe/server.js"
 	},
