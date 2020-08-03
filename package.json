@@ -5,7 +5,7 @@
 	"author": "Jirka, adapted by Lukas adapted by Dimi",
 	"main": "Server.js",
 	"scripts": {
-		"start": "node EIA2/Aufg6/Server/server.js"
+		"start": "node EIA2/KopieEndabgabe/server.js"
 	},
 	"engines": {
 		"node": "8.11.3"
