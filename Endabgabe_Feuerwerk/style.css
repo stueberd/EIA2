@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(19, 2, 43);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(217, 228, 154);
+}
+
+header{
+    text-align: left;
+    font-size: 1.2em;
+    color:rgb(68, 6, 97);
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    margin-top: 3em;
+    margin-left: 5em;
+
+}
+div#rocketlist{
+    background-color: rgb(28, 7, 77);
+    border: solid;
+    width: 20em;
+    height: 30em;
+}
+form{
+    height: max-content;
+    width: 420px;
+    border: solid;
+    margin-left: 20px;
+    background-color: rgb(19, 6, 94);
+    right: 10px;
+        }
+
+
+
+button{
+    margin-top: 1em;
+    background-color:rgb(247, 74, 6);
+    float: left;
+    width: auto;
+    cursor: pinter;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+canvas{
+    margin-top: -62em;
+    position:relative;
+    float: right;
+    border:solid;
+}

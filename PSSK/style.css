@@ -1,0 +1,39 @@
+body{
+    color:black;
+    font-size: 1rem;
+    background-color: rgb(185, 181, 179);
+    text-align: left;
+    float: left;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+header{ 
+    border-bottom: black;
+    margin-bottom: 5%;
+    height: 10%;
+   
+    
+}
+img{
+    float: right;
+    max-width: 10%;
+    max-height: fit-content;
+}
+nav{
+    margin-right: 10%;
+    margin-left: 10%;
+    border-right: darkgreen;
+}
+h1{
+    text-align: left;
+}
+h2{
+    text-align: left;
+}
+video{ height: 35%;
+        width: 50%;                    
+}
+ol{float: left;}
+ul{float: left;}
+li{float: left;}
+div{max-width: 50%;}
