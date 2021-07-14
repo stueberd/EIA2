@@ -14,7 +14,7 @@ const Mongo = require("mongodb");
 var Feuerwerk;
 (function (Feuerwerk) {
     let rocket;
-    let databaseUrl = "mongodb://mongodb+srv://franziska_fuchs:<password>@eia2.482ba.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://user1:Mondsilbertraum1@eia2.482ba.mongodb.net/Firework?retryWrites=true&w=majority";
     startServer();
     connectToDatabase(databaseUrl);
     function startServer() {
@@ -80,14 +80,14 @@ var Feuerwerk;
         return __awaiter(this, void 0, void 0, function* () {
             let url = Url.parse(_request.url, true);
             let oldName = url.query["rocket"];
-            let rocketName = url.query["rocketName"];
+            let rocketName = url.query["Name"];
             let rocketExplosion = url.query["ExplosionSize"];
             let rocketLifetime = url.query["Lifetime"];
             let rocketColor = url.query["Color"];
-            let rocketParticleAmount = url.query["Amount"];
+            let rocketAmount = url.query["Amount"];
             let rocketParticleType = url.query["ParticleType"];
             let rocketParticleSize = url.query["ParticleSize"];
-            rocket.updateOne({ "Name": oldName }, { $set: { "rocketName": rocketName, "ExplosionSize": rocketExplosion, "Lifetime": rocketLifetime, "Color": rocketColor, "Amount": rocketParticleAmount, "ParticleType": rocketParticleType, "ParticleSize": rocketParticleSize } });
+            rocket.updateOne({ "Name": oldName }, { $set: { "rocketName": rocketName, "ExplosionSize": rocketExplosion, "Lifetime": rocketLifetime, "Color": rocketColor, "Amount": rocketAmount, "ParticleType": rocketParticleType, "ParticleSize": rocketParticleSize } });
             _response.write("rocket updated!");
             _response.end();
         });

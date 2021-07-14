@@ -8,7 +8,6 @@ var Fireworks;
         drawSingleStar({ x: 180, y: 200 });
         drawStar();
         drawSkyline({ x: 0, y: horizon });
-        drawMountain();
         function drawBackground() {
             // console.log("drawBackground");
             let gradient = Fireworks.crc2.createLinearGradient(0, 0, 0, Fireworks.crc2.canvas.height);
@@ -63,58 +62,53 @@ var Fireworks;
             Fireworks.crc2.translate(_position.x, _position.y);
             Fireworks.crc2.beginPath();
             Fireworks.crc2.moveTo(0, 960);
-            Fireworks.crc2.lineTo(0, 125);
-            Fireworks.crc2.lineTo(75, 125);
+            Fireworks.crc2.lineTo(0, 825);
+            Fireworks.crc2.lineTo(75, 825);
             Fireworks.crc2.lineTo(75, 960);
-            Fireworks.crc2.lineTo(75, 90);
-            Fireworks.crc2.lineTo(125, 90);
-            Fireworks.crc2.lineTo(125, 300);
-            Fireworks.crc2.lineTo(125, 75);
-            Fireworks.crc2.lineTo(200, 75);
-            Fireworks.crc2.lineTo(200, 960);
-            Fireworks.crc2.lineTo(200, 120);
-            Fireworks.crc2.lineTo(250, 120);
-            Fireworks.crc2.lineTo(250, 960);
-            Fireworks.crc2.lineTo(250, 80);
-            Fireworks.crc2.lineTo(350, 80);
-            Fireworks.crc2.lineTo(350, 960);
-            Fireworks.crc2.lineTo(350, 140);
-            Fireworks.crc2.lineTo(550, 140);
-            Fireworks.crc2.lineTo(550, 300);
-            Fireworks.crc2.lineTo(550, 70);
-            Fireworks.crc2.lineTo(625, 70);
-            Fireworks.crc2.lineTo(625, 960);
-            Fireworks.crc2.lineTo(625, 90);
-            Fireworks.crc2.lineTo(700, 90);
-            Fireworks.crc2.lineTo(700, 300);
-            Fireworks.crc2.lineTo(700, 70);
-            Fireworks.crc2.lineTo(700, 70);
-            Fireworks.crc2.lineTo(700, 960);
-            Fireworks.crc2.lineTo(700, 120);
-            Fireworks.crc2.lineTo(740, 120);
-            Fireworks.crc2.lineTo(740, 300);
-            Fireworks.crc2.lineTo(800, 150);
-            Fireworks.crc2.lineTo(800, 150);
-            Fireworks.crc2.lineTo(800, 960);
+            /* crc2.lineTo(75, 690);
+             crc2.lineTo(125, 690);
+             crc2.lineTo(125, 960);
+ 
+             crc2.lineTo(125, 75);
+             crc2.lineTo(200, 75);
+             crc2.lineTo(200, 960);
+ 
+             crc2.lineTo(200, 120);
+             crc2.lineTo(250, 120);
+             crc2.lineTo(250, 960);
+ 
+             crc2.lineTo(250, 80);
+             crc2.lineTo(350, 80);
+             crc2.lineTo(350, 960);
+ 
+             crc2.lineTo(350, 140);
+             crc2.lineTo(550, 140);
+             crc2.lineTo(550, 300);
+ 
+             crc2.lineTo(550, 70);
+             crc2.lineTo(625, 70);
+             crc2.lineTo(625, 960);
+ 
+             crc2.lineTo(625, 90);
+             crc2.lineTo(700, 90);
+             crc2.lineTo(700, 300);
+ 
+             crc2.lineTo(700, 70);
+             crc2.lineTo(700, 70);
+             crc2.lineTo(700, 960);
+ 
+             crc2.lineTo(700, 120);
+             crc2.lineTo(740, 120);
+             crc2.lineTo(740, 300);
+ 
+             crc2.lineTo(800, 150);
+             crc2.lineTo(800, 150);
+             crc2.lineTo(800, 960);*/
             Fireworks.crc2.closePath();
             Fireworks.crc2.fillStyle = "blue";
             Fireworks.crc2.fill();
             Fireworks.crc2.restore();
         }
-        /*function drawMountain(): void {
-            crc2.fillStyle = "darkgrey";
-            crc2.strokeStyle = "grey";
-            crc2.save();
-            crc2.beginPath();
-            crc2.moveTo(0, crc2.canvas.height);
-            crc2.lineTo(0, crc2.canvas.height * 0.2);
-            crc2.lineTo(crc2.canvas.width, crc2.canvas.height * 0.15);
-            crc2.lineTo(crc2.canvas.width, crc2.canvas.height);
-            crc2.closePath();
-            crc2.fill();
-            crc2.stroke();
-            crc2.restore();
-        }*/
     }
     Fireworks.drawCanvas = drawCanvas;
 })(Fireworks || (Fireworks = {}));

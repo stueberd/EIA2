@@ -1,17 +1,16 @@
-var Feuerwerk;
-(function (Feuerwerk) {
+var Feuerwerk1;
+(function (Feuerwerk1) {
     console.log("Particle");
     class Particle {
         constructor() {
         }
         draw(_color, _particleRadius) {
-            console.log("draw Particle");
         }
         move() {
-            this.velocity = Feuerwerk.Vector.getSum(this.velocity, new Feuerwerk.Vector(0, 0.01)); //Gravitaion
-            this.position = Feuerwerk.Vector.getSum(this.position, this.velocity);
+            this.velocity = Feuerwerk1.Vector.getSum(this.velocity, new Feuerwerk1.Vector(0, 0.01)); //Gravitaion
+            this.position = Feuerwerk1.Vector.getSum(this.position, this.velocity);
         }
     }
-    Feuerwerk.Particle = Particle;
-})(Feuerwerk || (Feuerwerk = {}));
+    Feuerwerk1.Particle = Particle;
+})(Feuerwerk1 || (Feuerwerk1 = {}));
 //# sourceMappingURL=particle.js.map

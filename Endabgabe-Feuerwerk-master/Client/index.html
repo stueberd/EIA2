@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link type="text/css" rel="stylesheet" href="style_feuerwerk.css">
     <script src="background.js"></script>
     <script src="main.js"></script>
@@ -13,6 +13,7 @@
     <script src="rectangle.js"></script>
     <script src="dot.js"></script>
     <script src="line.js"></script>
+    
     <title>Your Firework></title>
 </head>
 
@@ -28,14 +29,14 @@
 
             <fieldset>
                 <legend>Name</legend>
-                <input type="text" id="name" name="rocketName" placeholder="Create here" required></br>
+                <input type="text" name="rocketName" id="name" placeholder="Create here" required></br>
             </fieldset>
 
             <fieldset>
                 <legend>Particle Speed</legend>
                 <span>
                     slow
-                    <input type="range" name="ExplosionSize" id="explosion" min="1" max="10" step="1" value="1">
+                    <input type="range" name="ExplosionSize" id="explosion" min="1" max="10" step="1" value= 1>
                     fast
                 </span>
             </fieldset>
@@ -44,7 +45,7 @@
                 <legend>Lifetime</legend>
                 <span>
                     1 sec
-                    <input type="range" name="Lifetime" id="liftetime_f" min="1" max="50" step="1" value="10">
+                    <input type="range" name="Lifetime" id="lifetime_f" min="1" max="50" step="1" value="10">
                     50 sec
                 </span>
             </fieldset>
@@ -62,7 +63,7 @@
                 <legend>Amount of Particle</legend>
                 <span>
                     10
-                    <input type="range" id="amount" name="Amount" value="10" min="10" max="1000" step="1">
+                    <input type="range"name="Amount" id="amount"  min="10" max="1000" step="1"value="10">
                     1000
                 </span>
             </fieldset>
@@ -70,9 +71,9 @@
             <fieldset>
                 <legend>Type of Particle</legend>
                 <select id="particleType" name="ParticleType">
-                    <option value="rectangle">rectangle</option>
-                    <option value="dot">dot</option>
-                    <option value="line">line</option>
+                    <option value="0">rectangle</option>
+                    <option value= "1" >dot</option>
+                    <option value="2" >line</option>
                 </select>
             </fieldset>
 
@@ -93,7 +94,7 @@
     </div>
 
     <div id="compilationContainer"></div>
-    <h3>Your Rocketlist</h3>
+    <h3>Your Rocket</h3>
 
     <div id="rocketlist"></div>
 
@@ -103,7 +104,8 @@
         <button id="deleteButton">delete rocket</button>
         <div id="dropUp">
             <button id="dropButton">show rockets</button>
-            <div id="dropupContent"></div>
+
+            <div id="dropupContent">Your Rockets from Db: </div>
         </div>
     </div>
  </div>

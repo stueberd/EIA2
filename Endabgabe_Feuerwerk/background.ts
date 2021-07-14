@@ -15,7 +15,7 @@ namespace Fireworks {
         drawSingleStar({ x: 180, y: 200 });
         drawStar();
         drawSkyline({ x: 0, y: horizon });
-        drawMountain();
+        
         
 
         function drawBackground(): void {
@@ -93,13 +93,13 @@ namespace Fireworks {
 
             crc2.beginPath();
             crc2.moveTo(0, 960);
-            crc2.lineTo(0, 125);
-            crc2.lineTo(75, 125);
+            crc2.lineTo(0, 825);
+            crc2.lineTo(75, 825);
             crc2.lineTo(75, 960);
 
-            crc2.lineTo(75, 90);
-            crc2.lineTo(125, 90);
-            crc2.lineTo(125, 300);
+           /* crc2.lineTo(75, 690);
+            crc2.lineTo(125, 690);
+            crc2.lineTo(125, 960);
 
             crc2.lineTo(125, 75);
             crc2.lineTo(200, 75);
@@ -135,7 +135,7 @@ namespace Fireworks {
 
             crc2.lineTo(800, 150);
             crc2.lineTo(800, 150);
-            crc2.lineTo(800, 960);
+            crc2.lineTo(800, 960);*/
 
         
 
@@ -148,20 +148,7 @@ namespace Fireworks {
 
 
         }
-        /*function drawMountain(): void {
-            crc2.fillStyle = "darkgrey";
-            crc2.strokeStyle = "grey";
-            crc2.save();
-            crc2.beginPath();
-            crc2.moveTo(0, crc2.canvas.height);
-            crc2.lineTo(0, crc2.canvas.height * 0.2);
-            crc2.lineTo(crc2.canvas.width, crc2.canvas.height * 0.15);
-            crc2.lineTo(crc2.canvas.width, crc2.canvas.height);
-            crc2.closePath();
-            crc2.fill();
-            crc2.stroke();
-            crc2.restore();
-        }*/
+       
 
        
 

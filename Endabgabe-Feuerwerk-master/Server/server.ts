@@ -3,18 +3,21 @@ import * as Url from "url";
 import * as  Mongo  from "mongodb";
 
 
+
 export namespace Feuerwerk {
     interface Rocket {
         [type: string]: string | string[];
     }
 
     let rocket: Mongo.Collection;
-    let databaseUrl: string = "mongodb://mongodb+srv://franziska_fuchs:<password>@eia2.482ba.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    let databaseUrl: string = "mongodb+srv://user1:Mondsilbertraum1@eia2.482ba.mongodb.net/Firework?retryWrites=true&w=majority"
+    
     startServer();
     connectToDatabase(databaseUrl);
 
     function startServer(): void {
         console.log("start_server");
+
         let server: Http.Server = Http.createServer();
 
         let port: number | string | undefined = process.env.PORT;
@@ -30,7 +33,8 @@ export namespace Feuerwerk {
     async function connectToDatabase(_url: string): Promise<void> {
         let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
-        await mongoClient.connect();
+        
+       await mongoClient.connect();
         rocket = mongoClient.db("fireworks").collection("rocketlists");
         console.log("Database connected: " + rocket);
     }
@@ -81,15 +85,15 @@ export namespace Feuerwerk {
     async function updateRocket(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let oldName: string | string[] = url.query["rocket"];
-        let rocketName: string | string[] = url.query["rocketName"];
+        let rocketName: string | string[] = url.query["Name"];
         let rocketExplosion: string | string[] = url.query["ExplosionSize"];
         let rocketLifetime: string | string[] = url.query["Lifetime"];
         let rocketColor: string | string[] = url.query["Color"];
-        let rocketParticleAmount: string | string[] = url.query["Amount"];
+        let rocketAmount: string | string[] = url.query["Amount"];
         let rocketParticleType: string | string[] = url.query["ParticleType"];
         let rocketParticleSize: string | string[] = url.query["ParticleSize"];
 
-        rocket.updateOne({ "Name": oldName }, { $set: { "rocketName": rocketName, "ExplosionSize": rocketExplosion, "Lifetime": rocketLifetime, "Color": rocketColor, "Amount": rocketParticleAmount, "ParticleType": rocketParticleType, "ParticleSize": rocketParticleSize } });
+        rocket.updateOne({ "Name": oldName }, { $set: { "rocketName": rocketName, "ExplosionSize": rocketExplosion, "Lifetime": rocketLifetime, "Color": rocketColor, "Amount": rocketAmount, "ParticleType": rocketParticleType, "ParticleSize": rocketParticleSize } });
         _response.write("rocket updated!");
         _response.end();
     }

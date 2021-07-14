@@ -1,0 +1,130 @@
+body{
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-template-rows: auto auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    
+}
+
+canvas{
+    grid-template-columns: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border: solid #ffffff;
+    cursor: wait;  
+    
+}
+canvas:hover{    
+    border:solid #00ff15;
+    cursor: wait;
+    /*cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;*/
+}
+
+form{
+
+grid-column: 2;
+background-color: #ffffff;
+padding: 1em;
+}
+
+fieldset{
+margin: 0.5em;
+padding: 0.7em;
+border-style: outset; 
+}
+
+div{    
+grid-column: 2;
+background-color: #fdfdfdec;
+padding: 1em;
+}
+
+
+meter::-webkit-meter-bar {
+background: rgb(255, 255, 255);
+    }
+
+meter::-webkit-meter-optimum-value {
+background: linear-gradient(#c8e90c, #fc0303);
+}
+
+meter{
+    height: 20px;
+}
+
+#particlecolor{
+width: 100px;
+height: 50px;
+cursor: pointer; 
+}
+
+input:focus{    
+    background-color: #c8e90c;
+    font-style: italic;
+    font-size: 15px;
+    
+}
+
+input{
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+select{
+ cursor: pointer;   
+ border-radius: 4px;
+}
+
+select:focus{
+    font-size: 20px;  
+}
+
+button{
+    border-radius: 4px;
+    height: 20px;
+    cursor: pointer;
+    }
+
+button:hover{
+    color: #e90000;
+    background-color: #037c27;
+    }
+
+
+
+
+
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  } 

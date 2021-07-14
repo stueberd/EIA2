@@ -2,6 +2,7 @@ body{
     background-color: rgb(19, 2, 43);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(217, 228, 154);
+    float: left;
 }
 
 header{
@@ -51,6 +52,6 @@ button:hover{
 canvas{
     margin-top: -62em;
     position:relative;
-    float: right;
+    float: left;
     border:solid;
 }

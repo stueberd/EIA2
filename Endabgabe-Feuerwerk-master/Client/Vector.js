@@ -1,11 +1,12 @@
-var Feuerwerk;
-(function (Feuerwerk) {
+var Feuerwerk1;
+(function (Feuerwerk1) {
     class Vector {
         constructor(_x, _y) {
             this.x = _x;
             this.y = _y;
             this.calcLength();
         }
+        //Statische Methoden werden ohne Instanzierung einer Klasse aufgerufen und sind über eine erzeugte Instanz nicht aufrufbar. Oft werden in statische Methoden für Hilfsfunktionen verwendet.
         static getRandom(_min, _max) {
             let tempVector = new Vector(0, 0);
             tempVector.set(_min + Math.random() * (_max - _min), _min + Math.random() * (_max - _min));
@@ -53,6 +54,6 @@ var Feuerwerk;
             this.length = Math.sqrt((this.x * this.x) + (this.y * this.y));
         }
     }
-    Feuerwerk.Vector = Vector;
-})(Feuerwerk || (Feuerwerk = {}));
+    Feuerwerk1.Vector = Vector;
+})(Feuerwerk1 || (Feuerwerk1 = {}));
 //# sourceMappingURL=Vector.js.map

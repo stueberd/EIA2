@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stylesheet.css" type="text/css" media="screen" />
+    <script src="./MoveableObject/MoveableObject.js"></script>
+    <script src="./Particle/Particle.js"></script>
+    <script src="./Main/Main.js"></script>
+    <script src="./GenerateContent/generateContent.js"></script>
+    <script src="./Vector/Vector.js"></script>
+
+
+
+    <title>Feiawork</title>
+</head>
+
+<body>
+
+    <canvas width="1050" height="500"></canvas>
+
+
+    <form id="controlPanel" method="GET">
+
+        <fieldset>
+            <span>
+            <legend> choose particle amount </legend>
+            <input id="quantity" type="number" name="quantity" step="100" min="100" max="400" value="100" />
+            <meter value="0" min="100" max="400"> </meter> <!--wird in partcle amount umbenannt und meter weg!!!-->
+            </span>
+        </fieldset>
+        <fieldset>
+            <span>
+            <legend> choose size</legend>
+            <input type="radio" name="explosionSize" id="small" value="3" checked />
+            <label for="small">Small</label>
+            <input type="radio" name="explosionSize" id="medium" value="4" />
+            <label for="medium">Medium</label>
+            <input type="radio" name="explosionSize" id="big" value="5" />
+            <label for="big">Big</label>
+            </span>    
+        </fieldset>
+        <fieldset>
+            <span>
+            <legend> choose particle shape </legend>
+            <select name="particleshape">
+                <option value="dot">Dots</option>
+                <option value="sparks">Sparks</option>
+                <option value="triangle">Triagle</option>
+                <option value="star">Star </option>
+            </select>
+            </span>
+        </fieldset>
+        <fieldset>
+            <span>
+            <legend> choose color </legend>
+            <input type="color" name="particlecolor" id="particlecolor" value="#ffffff">
+            </span>
+        </fieldset>
+    </form>
+
+
+    <div>
+        <input id="textarea" type="text" name="userTitel" placeholder="name your rocket" required />
+        <button type="button" id="saveBtn" form="controlPanel">save rocket</button>
+
+        <fieldset id="fireworkTitel">
+            <legend>your rockets</legend>
+        </fieldset>
+        <button type="button" id="loadBtn">load rocket</button>
+    </div>
+    <img>
+
+</body>
+
+
+</html>
