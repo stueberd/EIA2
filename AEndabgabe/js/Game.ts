@@ -31,7 +31,7 @@ namespace Soccer {
             return Math.sqrt(Math.pow(vec2[0] - vec1[0], 2) + Math.pow(vec2[1] - vec1[1], 2));
         }
 
-        private static getRandomDir() {                     //wahrscheinlich für den ball
+        private static getRandomDir() {                     
             let firstMult = Math.random() < 0.6 ? -1 : 1;
             let secondMult = Math.random() < 0.6 ? -1 : 1;
             return [Math.random() * firstMult, Math.random() * secondMult];
@@ -65,11 +65,11 @@ namespace Soccer {
             canvasHeight: number,
             settings: Settings
         ) {
-            console.log("Loading game...");     //consolen ausgabe
+            console.log("Loading game...");     
             this.fieldWidth = canvasWidth;
-            this.fieldHeight = canvasHeight;        //this weil es auf dieses ding hier bezogen ist legt höhe und breite vom canvas fest
+            this.fieldHeight = canvasHeight;        
             this.settings = settings;
-            this.team1 = new Team(                  //erstellt neues Team objekt 
+            this.team1 = new Team(                 
                 this.settings.teamName1,
                 Game.getHexColorFromPreset(this.settings.colorTeam1)    //holt sich vorgebene farben und setzt sie als teamfarbe
             );
@@ -77,11 +77,11 @@ namespace Soccer {
                 this.settings.teamName2,
                 Game.getHexColorFromPreset(this.settings.colorTeam2)
             );
-            this.initCanvas(canvasId);          //ruft die nitCanvas auf mit der Cnavas iD
+            this.initCanvas(canvasId);          
             this.drawField();   
             this.initParticipants();
             this.initBall();
-            this.setupControls();           //ruft diese canvas
+            this.setupControls();           
             console.log(this.participants);
             console.log("Loading game finished!");
             console.log("Start rendering..");
@@ -212,7 +212,7 @@ namespace Soccer {
                 return;
             }
             let found = null;
-            for (let partIdx in this.participants) {          //geht alle objekte des particpants array durch schaut in der if abrfagr ob es ein spieler ist wenn ja sucht er die rücennummer und das team von dem spieler und daraus holt er die id von dem spieler im array
+            for (let partIdx in this.participants) {          
                 let part = this.participants[partIdx];
                 if (!(part instanceof Player)) {
                     continue;
@@ -232,9 +232,9 @@ namespace Soccer {
             this.participants.splice(found, 1);     //hier entfert er den spieler vom spiel 
         }
 
-        private countTeamPlayers(team: Team) {       //ist da damit anzahl gezählt wird
+        private countTeamPlayers(team: Team) {       
             let count = 0;
-            for (let part of this.participants) {     //schaut wieder durch den array nach spielern 
+            for (let part of this.participants) {     
                 if (part instanceof Player) {
                     if (part.team.name === team.name) {
                         count++;
@@ -246,7 +246,7 @@ namespace Soccer {
 
         private renderScore(elem: HTMLDivElement) {
             let div = document.createElement("div");
-            let h1 = document.createElement("h1");              //updatesd wahrscheinlich die h1 
+            let h1 = document.createElement("h1");              
             let team1Count = this.countTeamPlayers(this.team1);
             let team2Count = this.countTeamPlayers(this.team2);
             h1.innerHTML = `(${team1Count} Spieler) ${this.team1.name} <b>${this.scoreTeam1}</b> : <b>${this.scoreTeam2}</b> ${this.team2.name} (${team2Count} Spieler)`;
@@ -272,7 +272,7 @@ namespace Soccer {
                 itemPrecision.innerText = `Präzision: ${this.hasBall.precision}`;
                 itemSpeed.innerText = `Geschwindigkeit: ${this.hasBall.speed}`;
                 itemInitPos.innerText = `Initialposition: ${this.hasBall.initX.toPrecision(3)} ${this.hasBall.initY.toPrecision(3)}`;
-                list.appendChild(itemNumber);           //appendChild wird an elternelement angehangen
+                list.appendChild(itemNumber);          
                 list.appendChild(itemTeam);
                 list.appendChild(itemPrecision);
                 list.appendChild(itemSpeed);
@@ -349,7 +349,7 @@ namespace Soccer {
             }
         }
 
-        private moveParticipant(part: Participant) {            //schaut im array welcher typ sich grade bewegt und gibt ihm die dementsprechende move funktion 
+        private moveParticipant(part: Participant) {            
             if (part instanceof Player) {
                 this.movePlayer(part);
             }
@@ -422,10 +422,10 @@ namespace Soccer {
 
             //check if ball collides with players after
             for (let part of this.participants) {
-                if (!(part instanceof Player)) {        //schaut ob participant ein player ist 
+                if (!(part instanceof Player)) {        
                     continue;
                 }
-                let dist = Game.getDistance([part.x, part.y], [this.ball.x, this.ball.y]);  //wenn die distanz kleiner als 3 ist zwischen spieler und ball hat der spieler den ball und man schießen
+                let dist = Game.getDistance([part.x, part.y], [this.ball.x, this.ball.y]);  
                 //console.log(part.backNumber, dist);
                 if (dist <= 3) {
                     console.log(part.backNumber, "HIT THE BALL!", this.ball.x, this.ball.y);
@@ -445,7 +445,7 @@ namespace Soccer {
             if (!this.clickMode) {
                 return;
             }
-            let precisionMulti = 1 - (this.hasBall.precision / this.settings.maxPrecision);     //berechnet die pression aus max prezision und der spieler prezesion 
+            let precisionMulti = 1 - (this.hasBall.precision / this.settings.maxPrecision);     
             let offset = MAX_PRECISION_OFFSET - MAX_PRECISION_OFFSET * precisionMulti;
             let dir = Game.getNormDirVector([this.ball.x, this.ball.y], [evt.offsetX + offset, evt.offsetY - offset]);
             this.ball.setDir(dir);
@@ -468,7 +468,7 @@ namespace Soccer {
 
         private selectPlayerClick (evt: MouseEvent) {
             //prevent opening of contextmenu
-            evt.preventDefault();               //verwindet rechtsklick menue öffnen 
+            evt.preventDefault();              
             let vec2 = [evt.offsetX, evt.offsetY];
             //if this.newPlayerFor is set, then add a player with a click, not select one
             if (this.newPlayerFor){
